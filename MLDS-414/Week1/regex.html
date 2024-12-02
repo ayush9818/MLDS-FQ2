@@ -1,0 +1,2051 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="iLykei_RegularExpressions_files/libs/clipboard/clipboard.min.js"></script>
+<script src="iLykei_RegularExpressions_files/libs/quarto-html/tabby.min.js"></script>
+<script src="iLykei_RegularExpressions_files/libs/quarto-html/popper.min.js"></script>
+<script src="iLykei_RegularExpressions_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="iLykei_RegularExpressions_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="iLykei_RegularExpressions_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="iLykei_RegularExpressions_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="iLykei_RegularExpressions_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.3.433">
+
+  <meta name="author" content="Yuri Balasanov, © iLykei 2023-2024">
+  <title>quarto-input2cd342fa</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="iLykei_RegularExpressions_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="iLykei_RegularExpressions_files/libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="iLykei_RegularExpressions_files/libs/revealjs/dist/theme/quarto.css">
+  <link href="iLykei_RegularExpressions_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="iLykei_RegularExpressions_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="iLykei_RegularExpressions_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="iLykei_RegularExpressions_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+
+  .callout {
+    margin-top: 1em;
+    margin-bottom: 1em;  
+    border-radius: .25rem;
+  }
+
+  .callout.callout-style-simple { 
+    padding: 0em 0.5em;
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+    display: flex;
+  }
+
+  .callout.callout-style-default {
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+  }
+
+  .callout .callout-body-container {
+    flex-grow: 1;
+  }
+
+  .callout.callout-style-simple .callout-body {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-style-default .callout-body {
+    font-size: 0.9rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-titled.callout-style-simple .callout-body {
+    margin-top: 0.2em;
+  }
+
+  .callout:not(.callout-titled) .callout-body {
+      display: flex;
+  }
+
+  .callout:not(.no-icon).callout-titled.callout-style-simple .callout-content {
+    padding-left: 1.6em;
+  }
+
+  .callout.callout-titled .callout-header {
+    padding-top: 0.2em;
+    margin-bottom: -0.2em;
+  }
+
+  .callout.callout-titled .callout-title  p {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+    
+  .callout.callout-titled.callout-style-simple .callout-content  p {
+    margin-top: 0;
+  }
+
+  .callout.callout-titled.callout-style-default .callout-content  p {
+    margin-top: 0.7em;
+  }
+
+  .callout.callout-style-simple div.callout-title {
+    border-bottom: none;
+    font-size: .9rem;
+    font-weight: 600;
+    opacity: 75%;
+  }
+
+  .callout.callout-style-default  div.callout-title {
+    border-bottom: none;
+    font-weight: 600;
+    opacity: 85%;
+    font-size: 0.9rem;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-default div.callout-content {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-simple .callout-icon::before {
+    height: 1rem;
+    width: 1rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 1rem 1rem;
+  }
+
+  .callout.callout-style-default .callout-icon::before {
+    height: 0.9rem;
+    width: 0.9rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 0.9rem 0.9rem;
+  }
+
+  .callout-title {
+    display: flex
+  }
+    
+  .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  .callout.no-icon::before {
+    display: none !important;
+  }
+
+  .callout.callout-titled .callout-body > .callout-content > :last-child {
+    margin-bottom: 0.5rem;
+  }
+
+  .callout.callout-titled .callout-icon::before {
+    margin-top: .5rem;
+    padding-right: .5rem;
+  }
+
+  .callout:not(.callout-titled) .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  /* Callout Types */
+
+  div.callout-note {
+    border-left-color: #4582ec !important;
+  }
+
+  div.callout-note .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEU0lEQVRYCcVXTWhcVRQ+586kSUMMxkyaElstCto2SIhitS5Ek8xUKV2poatCcVHtUlFQk8mbaaziwpWgglJwVaquitBOfhQXFlqlzSJpFSpIYyXNjBNiTCck7x2/8/LeNDOZxDuEkgOXe++553zfefee+/OYLOXFk3+1LLrRdiO81yNqZ6K9cG0P3MeFaMIQjXssE8Z1JzLO9ls20MBZX7oG8w9GxB0goaPrW5aNMp1yOZIa7Wv6o2ykpLtmAPs/vrG14Z+6d4jpbSKuhdcSyq9wGMPXjonwmESXrriLzFGOdDBLB8Y6MNYBu0dRokSygMA/mrun8MGFN3behm6VVAwg4WR3i6FvYK1T7MHo9BK7ydH+1uurECoouk5MPRyVSBrBHMYwVobG2aOXM07sWrn5qgB60rc6mcwIDJtQrnrEr44kmy+UO9r0u9O5/YbkS9juQckLed3DyW2XV/qWBBB3ptvI8EUY3I9p/67OW+g967TNr3Sotn3IuVlfMLVnsBwH4fsnebJvyGm5GeIUA3jljERmrv49SizPYuq+z7c2H/jlGC+Ghhupn/hcapqmcudB9jwJ/3jvnvu6vu5lVzF1fXyZuZZ7U8nRmVzytvT+H3kilYvH09mLWrQdwFSsFEsxFVs5fK7A0g8gMZjbif4ACpKbjv7gNGaD8bUrlk8x+KRflttr22JEMRUbTUwwDQScyzPgedQHZT0xnx7ujw2jfVfExwYHwOsDTjLdJ2ebmeQIlJ7neo41s/DrsL3kl+W2lWvAga0tR3zueGr6GL78M3ifH0rGXrBC2aAR8uYcIA5gwV8zIE8onoh8u0Fca/ciF7j1uOzEnqcIm59sEXoGc0+z6+H45V1CvAvHcD7THztu669cnp+L0okAeIc6zjbM/24LgGM1gZk7jnRu1aQWoU9sfUOuhrmtaPIO3YY1KLLWZaEO5TKUbMY5zx8W9UJ6elpLwKXbsaZ4EFl7B4bMtDv0iRipKoDQT2sNQI9b1utXFdYisi+wzZ/ri/1m7QfDgEuvgUUEIJPq3DhX/5DWNqIXDOweC2wvIR90Oq3lDpdMIgD2r0dXvGdsEW5H6x6HLRJYU7C69VefO1x8Gde1ZFSJLfWS1jbCnhtOPxmpfv2LXOA2Xk2tvnwKKPFuZ/oRmwBwqRQDcKNeVQkYcOjtWVBuM/JuYw5b6isojIkYxyYAFn5K7ZBF10fea52y8QltAg6jnMqNHFBmGkQ1j+U43HMi2xMar1Nv0zGsf1s8nUsmUtPOOrbFIR8bHFDMB5zL13Gmr/kGlCkUzedTzzmzsaJXhYawnA3UmARpiYj5ooJZiUoxFRtK3X6pgNPv+IZVPcnwbOl6f+aBaO1CNvPW9n9LmCp01nuSaTRF2YxHqZ8DYQT6WsXT+RD6eUztwYLZ8rM+rcPxamv1VQzFUkzFXvkiVrySGQgJNvXHJAxiU3/NwiC03rSf05VBaPtu/Z7/B8Yn/w7eguloAAAAAElFTkSuQmCC');
+  }
+
+  div.callout-note.callout-style-default .callout-title {
+    background-color: #dae6fb
+  }
+
+  div.callout-important {
+    border-left-color: #d9534f !important;
+  }
+
+  div.callout-important .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEKklEQVRYCcVXTWhcVRS+575MJym48A+hSRFr00ySRQhURRfd2HYjk2SSTokuBCkU2o0LoSKKraKIBTcuFCoidGFD08nkBzdREbpQ1EDNIv8qSGMFUboImMSZd4/f9zJv8ibJMC8xJQfO3HPPPef7zrvvvnvviIkpC9nsw0UttFunbUhpFzFtarSd6WJkStVMw5xyVqYTvkwfzuf/5FgtkVoB0729j1rjXwThS7Vio+Mo6DNnvLfahoZ+i/o32lULuJ3NNiz7q6+pyAUkJaFF6JwaM2lUJlV0MlnQn5aTRbEu0SEqHUa0A4AdiGuB1kFXRfVyg5d87+Dg4DL6m2TLAub60ilj7A1Ec4odSAc8X95sHh7+ZRPCFo6Fnp7HfU/fBng/hi10CjCnWnJjsxvDNxWw0NfV6Rv5GgP3I3jGWXumdTD/3cbEOP2ZbOZp69yniG3FQ9z1jD7bnBu9Fc2tKGC2q+uAJOQHBDRiZX1x36o7fWBs7J9ownbtO+n0/qWkvW7UPIfc37WgT6ZGR++EOJyeQDSb9UB+DZ1G6DdLDzyS+b/kBCYGsYgJbSQHuThGKRcw5xdeQf8YdNHsc6ePXrlSYMBuSIAFTGAtQo+VuALo4BX83N190NWZWbynBjhOHsmNfFWLeL6v+ynsA58zDvvAC8j5PkbOcXCMg2PZFk3q8MjI7WAG/Dp9AwP7jdGBOOQkAvlFUB+irtm16I1Zw9YBcpGTGXYmk3kQIC/Cds55l+iMI3jqhjAuaoe+am2Jw5GT3Nbz3CkE12NavmzN5+erJW7046n/CH1RO/RVa8lBLozXk9uqykkGAyRXLWlLv5jyp4RFsG5vGVzpDLnIjTWgnRy2Rr+tDKvRc7Y8AyZq10jj8DqXdnIRNtFZb+t/ZRtXcDiVnzpqx8mPcDWxgARUqx0W1QB9MeUZiNrV4qP+Ehc+BpNgATsTX8ozYKL2NtFYAHc84fG7ndxUPr+AR/iQSns7uSUufAymwDOb2+NjK27lEFocm/EE2WpyIy/Hi66MWuMKJn8RvxIcj87IM5Vh9663ziW36kR0HNenXuxmfaD8JC7tfKbrhFr7LiZCrMjrzTeGx+PmkosrkNzW94ObzwocJ7A1HokLolY+AvkTiD/q1H0cN48c5EL8Crkttsa/AXQVDmutfyku0E7jShx49XqV3MFK8IryDhYVbj7Sj2P2eBxwcXoe8T8idsKKPRcnZw1b+slFTubwUwhktrfnAt7J++jwQtLZcm3sr9LQrjRzz6cfMv9aLvgmnAGvpoaGLxM4mAEaLV7iAzQ3oU0IvD5x9ix3yF2RAAuYAOO2f7PEFWCXZ4C9Pb2UsgDeVnFSpbFK7/IWu7TPTvBqzbGdCHOJQSxiEjt6IyZmxQyEJHv6xyQsYk//moVFsN2zP6fRImjfq7/n/wFDguUQFNEwugAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-important.callout-style-default .callout-title {
+    background-color: #f7dddc
+  }
+
+  div.callout-warning {
+    border-left-color: #f0ad4e !important;
+  }
+
+  div.callout-warning .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAETklEQVRYCeVWW2gcVRg+58yaTUnizqbipZeX4uWhBEniBaoUX1Ioze52t7sRq6APio9V9MEaoWlVsFasRq0gltaAPuxms8lu0gcviE/FFOstVbSIxgcv6SU7EZqmdc7v9+9mJtNks51NTUH84ed889/PP+cmxP+d5FIbMJmNbpREu4WUkiTtCicKny0l1pIKmBzovF2S+hIJHX8iEu3hZJ5lNZGqyRrGSIQpq15AzF28jgpeY6yk6GVdrfFqdrD6Iw+QlB8g0YS2g7dyQmXM/IDhBhT0UCiRf59lfqmmDvzRt6kByV/m4JjtzuaujMUM2c5Z2d6JdKrRb3K2q6mA+oYVz8JnDdKPmmNthzkAk/lN63sYPgevrguc72aZX/L9C6x09GYyxBgCX4NlvyGUHOKELlm5rXeR1kchuChJt4SSwyddZRXgvwMGvYo4QSlk3/zkHD8UHxwVJA6zjZZqP8v8kK8OWLnIZtLyCAJagYC4rTGW/9Pqj92N/c+LUaAj27movwbi19tk/whRCIE7Q9vyI6yvRpftAKVTdUjOW40X3h5OXsKCdmFcx0xlLJoSuQngnrJe7Kcjm4OMq9FlC7CMmScQANuNvjfP3PjGXDBaUQmbp296S5L4DrpbrHN1T87ZVEZVCzg1FF0Ft+dKrlLukI+/c9ENo+TvlTDbYFvuKPtQ9+l052rXrgKoWkDAFnvh0wTOmYn8R5f4k/jN/fZiCM1tQx9jQQ4ANhqG4hiL0qIFTGViG9DKB7GYzgubnpofgYRwO+DFjh0Zin2m4b/97EDkXkc+f6xYAPX0KK2I/7fUQuwzuwo/L3AkcjugPNixC8cHf0FyPjWlItmLxWw4Ou9YsQCr5fijMGoD/zpdRy95HRysyXA74MWOnscpO4j2y3HAVisw85hX5+AFBRSHt4ShfLFkIMXTqyKFc46xdzQM6XbAi702a7sy04J0+feReMFKp5q9esYLCqAZYw/k14E/xcLLsFElaornTuJB0svMuJINy8xkIYuL+xPAlWRceH6+HX7THJ0djLUom46zREu7tTkxwmf/FdOZ/sh6Q8qvEAiHpm4PJ4a/doJe0gH1t+aHRgCzOvBvJedEK5OFE5jpm4AGP2a8Dxe3gGJ/pAutug9Gp6he92CsSsWBaEcxGx0FHytmIpuqGkOpldqNYQK8cSoXvd+xLxXADw0kf6UkJNFtdo5MOgaLjiQOQHcn+A6h5NuL2s0qsC2LOM75PcF3yr5STuBSAcGG+meA14K/CI21HcS4LBT6tv0QAh8Dr5l93AhZzG5ZJ4VxAqdZUEl9z7WJ4aN+svMvwHHL21UKTd1mqvChH7/Za5xzXBBKrUcB0TQ+Ulgkfbi/H/YT5EptrGzsEK7tR1B7ln9BBwckYfMiuSqklSznIuoIIOM42MQO+QnduCoFCI0bpkzjCjddHPN/F+2Yu+sd9bKNpVwHhbS3LluK/0zgfwD0xYI5dXuzlQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-warning.callout-style-default .callout-title {
+    background-color: #fcefdc
+  }
+
+  div.callout-tip {
+    border-left-color: #02b875 !important;
+  }
+
+  div.callout-tip .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAADr0lEQVRYCe1XTWgTQRj9ZjZV8a9SPIkKgj8I1bMHsUWrqYLVg4Ue6v9BwZOxSYsIerFao7UiUryIqJcqgtpimhbBXoSCVxUFe9CTiogUrUp2Pt+3aUI2u5vdNh4dmMzOzHvvezuz8xNFM0mjnbXaNu1MvFWRXkXEyE6aYOYJpdW4IXuA4r0fo8qqSMDBU0v1HJUgVieAXxzCsdE/YJTdFcVIZQNMyhruOMJKXYFoLfIfIvVIMWdsrd+Rpd86ZmyzzjJmLStqRn0v8lzkb4rVIXvnpScOJuAn2ACC65FkPzEdEy4TPWRLJ2h7z4cArXzzaOdKlbOvKKX25Wl00jSnrwVxAg3o4dRxhO13RBSdNvH0xSARv3adTXbBdTf64IWO2vH0LT+cv4GR1DJt+DUItaQogeBX/chhbTBxEiZ6gftlDNXTrvT7co4ub5A6gp9HIcHvzTa46OS5fBeP87Qm0fQkr4FsYgVQ7Qg+ZayaDg9jhg1GkWj8RG6lkeSacrrHgDaxdoBiZPg+NXV/KifMuB6//JmYH4CntVEHy/keA6x4h4CU5oFy8GzrBS18cLJMXcljAKB6INjWsRcuZBWVaS3GDrqB7rdapVIeA+isQ57Eev9eCqzqOa81CY05VLd6SamW2wA2H3SiTbnbSxmzfp7WtKZkqy4mdyAlGx7ennghYf8voqp9cLSgKdqNfa6RdRsAAkPwRuJZNbpByn+RrJi1RXTwdi8RQF6ymDwGMAtZ6TVE+4uoKh+MYkcLsT0Hk8eAienbiGdjJHZTpmNjlbFJNKDVAp2fJlYju6IreQxQ08UJDNYdoLSl6AadO+fFuCQqVMB1NJwPm69T04Wv5WhfcWyfXQB+wXRs1pt+nCknRa0LVzSA/2B+a9+zQJadb7IyyV24YAxKp2Jqs3emZTuNnKxsah+uabKbMk7CbTgJx/zIgQYErIeTKRQ9yD9wxVof5YolPHqaWo7TD6tJlh7jQnK5z2n3+fGdggIOx2kaa2YI9QWarc5Ce1ipNWMKeSG4DysFF52KBmTNMmn5HqCFkwy34rDg05gDwgH3bBi+sgFhN/e8QvRn8kbamCOhgrZ9GJhFDgfcMHzFb6BAtjKpFhzTjwv1KCVuxHvCbsSiEz4CANnj84cwHdFXAbAOJ4LTSAawGWFn5tDhLMYz6nWeU2wJfIhmIJBefcd/A5FWQWGgrWzyORZ3Q6HuV+Jf0Bj+BTX69fm1zWgK7By1YTXchFDORywnfQ7GpzOo6S+qECrsx2ifVQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-tip.callout-style-default .callout-title {
+    background-color: #ccf1e3
+  }
+
+  div.callout-caution {
+    border-left-color: #fd7e14 !important;
+  }
+
+  div.callout-caution .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAACV0lEQVRYCdVWzWoUQRCuqp2ICBLJXgITZL1EfQDBW/bkzUMUD7klD+ATSHBEfAIfQO+iXsWDxJsHL96EHAwhgzlkg8nBg25XWb0zIb0zs9muYYWkoKeru+vn664fBqElyZNuyh167NXJ8Ut8McjbmEraKHkd7uAnAFku+VWdb3reSmRV8PKSLfZ0Gjn3a6Xlcq9YGb6tADjn+lUfTXtVmaZ1KwBIvFI11rRXlWlatwIAAv2asaa9mlB9wwygiDX26qaw1yYPzFXg2N1GgG0FMF8Oj+VIx7E/03lHx8UhvYyNZLN7BwSPgekXXLribw7w5/c8EF+DBK5idvDVYtEEwMeYefjjLAdEyQ3M9nfOkgnPTEkYU+sxMq0BxNR6jExrAI31H1rzvLEfRIdgcv1XEdj6QTQAS2wtstEALLG1yEZ3QhH6oDX7ExBSFEkFINXH98NTrme5IOaaA7kIfiu2L8A3qhH9zRbukdCqdsA98TdElyeMe5BI8Rs2xHRIsoTSSVFfCFCWGPn9XHb4cdobRIWABNf0add9jakDjQJpJ1bTXOJXnnRXHRf+dNL1ZV1MBRCXhMbaHqGI1JkKIL7+i8uffuP6wVQAzO7+qVEbF6NbS0LJureYcWXUUhH66nLR5rYmva+2tjRFtojkM2aD76HEGAD3tPtKM309FJg5j/K682ywcWJ3PASCcycH/22u+Bh7Aa0ehM2Fu4z0SAE81HF9RkB21c5bEn4Dzw+/qNOyXr3DCTQDMBOdhi4nAgiFDGCinIa2owCEChUwD8qzd03PG+qdW/4fDzjUMcE1ZpIAAAAASUVORK5CYII=');
+  }
+
+  div.callout-caution.callout-style-default .callout-title {
+    background-color: #ffe5d0
+  }
+
+  </style>
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title"><p>iLykei Lecture Series<br>
+Regular Expressions<br>
+</p></h1>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Yuri Balasanov, © iLykei 2023-2024 
+</div>
+</div>
+</div>
+
+</section>
+<section id="introduction-to-regular-expressions" class="slide level2 scrollable">
+<h2>Introduction to regular expressions</h2>
+<ul>
+<li><p>Regular expression (often shortened to regex), is a tiny highly specialized language embedded inside Python for specifying text search strings. It is available in Python through the module <code>re</code>.</p></li>
+<li><p>This practical language is used in every computer language, word processor, and text processing tools like the Unix tools grep or Emacs.</p></li>
+<li><p>Using this language we specify the rules for the set of possible strings that can be matched. This set might contain chunks of English sentences, e-mail addresses, phone numbers, TeX commands, or any other string patterns.</p></li>
+<li><p>Regular expressions are particularly useful for searching in texts, when we have a <strong>pattern to search for</strong> and a corpus of texts to search through. A regular expression search function will search through the corpus, returning all texts that match the pattern. The corpus can be a single document or a collection.</p></li>
+<li><p>Regular expressions can also be used to modify a string or to split it apart in different ways</p></li>
+<li><p>Regular expression patterns are compiled into a <strong>series of bytecodes</strong> which are then executed by a matching engine written in C.</p></li>
+<li><p>For advanced use, it may be necessary to pay careful attention to how the engine will execute a given RE, and write the RE in a certain way in order to produce bytecode that runs faster.</p></li>
+<li><p>Text sources used in this document are:</p>
+<ol type="1">
+<li>Speech and Language Processing: An introduction to Natural Language Processing, Computational Linguistics, and Speech Recognition. Thoird Edition draft Daniel Jurafsky, James H. Martin, 2023, <a href="https://web.stanford.edu/~jurafsky/slp3/ed3book_jan72023.pdf" class="uri">https://web.stanford.edu/~jurafsky/slp3/ed3book_jan72023.pdf</a></li>
+<li><a href="https://docs.python.org/3/howto/regex.html" class="uri">https://docs.python.org/3/howto/regex.html</a></li>
+</ol></li>
+</ul>
+</section>
+<section id="when-to-use-and-when-not-to-use-regex" class="slide level2">
+<h2>When to use, and when not to use RegEx</h2>
+<h3 id="to-use">To use</h3>
+<p>In general, whenever the matching pattern becomes more complex than a fixed sequence of symbols, regular expressions are more efficient.</p>
+<h3 id="not-to-use">Not to use</h3>
+<p>Information is based on this <a href="https://www.baeldung.com/cs/regex-when-to-avoid">source</a>.</p>
+<ul>
+<li><p>While RegEx is efficient to work with formal languages (based on alphabet and formal grammar), <strong>it is not as useful with not formal languages</strong>, like markup languages. So, it is better to avoid using RegEx with HTML or XML texts because their tree structure requires RegEx to keep track of all opening/closing markup tags. <strong>For HTML or XML files it is better to use the corresponding parser instead of RegEx</strong>.</p></li>
+<li><p>Sometimes a simple search works better.</p>
+<ul>
+<li><p>Searching for the color used to paint the wall will need to specify all particular colors in a pattern like below. It would be much easier to do a simple search for the word “color”, and then look for a color around it.</p>
+<div class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a>\b(red<span class="op">|</span>blue<span class="op">|</span>green<span class="op">|</span>yellow<span class="op">|</span>orange<span class="op">|</span>purple<span class="op">|</span>pink<span class="op">|</span>brown<span class="op">|</span>black<span class="op">|</span>white<span class="op">|</span>gray)\b</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></li>
+<li><p>In most tasks when the pattern occurs only once in a text, simple search is faster.</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="basic-regular-expression-patterns" class="slide level2 scrollable">
+<h2>Basic regular expression patterns</h2>
+<h3 id="metacharacters">Metacharacters</h3>
+<ul>
+<li><p>Most letters and characters can be matched exactly. But there are exceptions to the rule: some characters are special <strong><em>metacharacters</em></strong>, and don’t match themselves. Instead, they signal that some out-of-the-ordinary thing should be matched, or they affect other portions of the RE by repeating them or changing their meaning.</p></li>
+<li><p>The list of metacharacters is:</p></li>
+</ul>
+<div class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a>. <span class="op">^</span> $ <span class="op">*</span> <span class="op">+</span> ? { } [ ] \ <span class="op">|</span> ( )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="character-class" class="slide level2 scrollable">
+<h2>Character class</h2>
+<ul>
+<li>The brackets <code>[</code>, <code>]</code> specify a character class, or set of characters to match. Characters can be listed individually, or a range of characters can be indicated by giving two characters and separating them by a <code>-</code>.</li>
+<li>Metacharacters (except <code>\</code>) are not active inside classes. For example <code>[akm$]</code> will match any of the characters <code>a</code>, <code>k</code>, <code>m</code>, or <code>$</code>. Although dollar sign is a metacharacter, it is not interpreted as such within the class.</li>
+</ul>
+<p>Check some examples.</p>
+<div class="columns">
+<div class="column" style="width:10%;">
+<p><img data-src="ChatGPT_logo.png"></p>
+</div><div class="column" style="width:90%;">
+<blockquote>
+<p>Write a Python code searching for “a”, “b”, “c” in string “abcdef” using regular expression.</p>
+</blockquote>
+</div>
+</div>
+<p>Function <code>findall()</code> finds all instances of the pattern on the list.</p>
+<div class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="im">import</span> re</span>
+<span id="cb3-2"><a href="#cb3-2"></a></span>
+<span id="cb3-3"><a href="#cb3-3"></a>string <span class="op">=</span> <span class="st">"abcdef"</span></span>
+<span id="cb3-4"><a href="#cb3-4"></a><span class="bu">print</span>(<span class="st">'Matching [a,b,c]: '</span>,re.findall(<span class="vs">r"[a,b,c]"</span>, string))</span>
+<span id="cb3-5"><a href="#cb3-5"></a><span class="bu">print</span>(<span class="st">'Matching [a-c]: '</span>,re.findall(<span class="vs">r"[a-c]"</span>, string))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Matching [a,b,c]:  ['a', 'b', 'c']
+Matching [a-c]:  ['a', 'b', 'c']</code></pre>
+</div>
+</div>
+</section>
+<section id="complementing-the-set-with-caret" class="slide level2 scrollable">
+<h2>Complementing the set with caret</h2>
+<ul>
+<li><p>Including <code>^</code> as the first character of the class creates a complementing class.</p></li>
+<li><p>If <code>^</code> appears in any other position in the class, except the first position, it becomes a class element</p>
+<div class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="im">import</span> re</span>
+<span id="cb5-2"><a href="#cb5-2"></a></span>
+<span id="cb5-3"><a href="#cb5-3"></a>string <span class="op">=</span> <span class="st">"abcdef"</span></span>
+<span id="cb5-4"><a href="#cb5-4"></a><span class="bu">print</span>(<span class="st">'Matching not [a,b,c]: '</span>,re.findall(<span class="vs">r"[^(a,b,c)]"</span>, string))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Matching not [a,b,c]:  ['d', 'e', 'f']</code></pre>
+</div>
+</div></li>
+</ul>
+</section>
+<section id="backslash" class="slide level2 scrollable">
+<h2>Backslash</h2>
+<ul>
+<li>Backslash <code>\</code> is probably the most important of all metacharacters because it can change the meaning of other metacharacters. For example, to match <code>[</code> or <code>\</code>, precede them with the backslash: <code>\[</code>, <code>\\</code>.</li>
+</ul>
+<p>Some of the special sequences beginning with <code>\</code></p>
+<table>
+<colgroup>
+<col style="width: 15%">
+<col style="width: 84%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><code>\d</code></td>
+<td>Matches any decimal digit; equivalent to the class <code>[0-9]</code></td>
+</tr>
+<tr class="even">
+<td><code>\D</code></td>
+<td>Matches any non-digit character; equivalent to the class <code>[^0-9]</code></td>
+</tr>
+<tr class="odd">
+<td><code>\s</code></td>
+<td>Matches any whitespace character; equivalent to the class <code>[ \t\n\r\f\v]</code></td>
+</tr>
+<tr class="even">
+<td><code>\S</code></td>
+<td>Matches any non-whitespace character; equivalent to the class <code>[^ \t\n\r\f\v]</code></td>
+</tr>
+<tr class="odd">
+<td><code>\w</code></td>
+<td>Matches any alphanumeric character; equivalent to the class <code>[a-zA-Z0-9_]</code></td>
+</tr>
+<tr class="even">
+<td><code>\W</code></td>
+<td>Matches any non-alphanumeric character; equivalent to the class <code>[^a-zA-Z0-9_]</code></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p>A more complete table is in <a href="https://docs.python.org/3/library/re.html">Regular Expression Syntax</a></p></li>
+<li><p>The predefined sequences can be included inside a character class. For example, <code>[\s,.]</code> is a character class that will match any whitespace, or <code>,</code>, or <code>.</code>.</p></li>
+<li><p>A simple way of signaling that backslash <code>\</code> should be interpreted only as a literal in a regular expression pattern is putting a <strong>raw string literal</strong> <code>r</code> in front of the pattern. For example, <code>r"C:\Documents\User\File"</code> means that backslashes in the path will be interpreted as literals, but not as a metacharacter.</p></li>
+</ul>
+</section>
+<section id="dot" class="slide level2 scrollable">
+<h2>Dot</h2>
+<ul>
+<li>The metacharacter <code>.</code> matches anything <strong>except a newline character</strong>.</li>
+</ul>
+<div class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="im">import</span> re</span>
+<span id="cb7-2"><a href="#cb7-2"></a></span>
+<span id="cb7-3"><a href="#cb7-3"></a>string <span class="op">=</span> <span class="st">"begin, begun"</span></span>
+<span id="cb7-4"><a href="#cb7-4"></a>pattern <span class="op">=</span> <span class="vs">r"beg.n"</span></span>
+<span id="cb7-5"><a href="#cb7-5"></a><span class="bu">print</span>(<span class="st">'Matching "begin" or "begun": '</span>,re.findall(pattern, string))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Matching "begin" or "begun":  ['begin', 'begun']</code></pre>
+</div>
+</div>
+<ul>
+<li>There is also an alternative mode <code>re.DOTALL</code> in which even a newline will be matched. It is often used when the goal is to match “any character”.</li>
+</ul>
+<div class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a><span class="im">import</span> re</span>
+<span id="cb9-2"><a href="#cb9-2"></a></span>
+<span id="cb9-3"><a href="#cb9-3"></a><span class="co"># Multiline string with newline characters</span></span>
+<span id="cb9-4"><a href="#cb9-4"></a>text <span class="op">=</span> <span class="st">"""Hello,</span></span>
+<span id="cb9-5"><a href="#cb9-5"></a><span class="st">this is a test</span></span>
+<span id="cb9-6"><a href="#cb9-6"></a><span class="st">string with multiple lines."""</span></span>
+<span id="cb9-7"><a href="#cb9-7"></a></span>
+<span id="cb9-8"><a href="#cb9-8"></a><span class="co"># Pattern to match everything between 'Hello' and 'lines'</span></span>
+<span id="cb9-9"><a href="#cb9-9"></a><span class="co">#pattern_without_dotall = r"Hello,(.*)lines."</span></span>
+<span id="cb9-10"><a href="#cb9-10"></a>pattern <span class="op">=</span> <span class="vs">r"Hello,(.*)lines."</span></span>
+<span id="cb9-11"><a href="#cb9-11"></a></span>
+<span id="cb9-12"><a href="#cb9-12"></a><span class="co"># Matching without re.DOTALL</span></span>
+<span id="cb9-13"><a href="#cb9-13"></a>match_without_dotall <span class="op">=</span> re.search(pattern, text)</span>
+<span id="cb9-14"><a href="#cb9-14"></a></span>
+<span id="cb9-15"><a href="#cb9-15"></a><span class="co"># Matching with re.DOTALL</span></span>
+<span id="cb9-16"><a href="#cb9-16"></a>match_with_dotall <span class="op">=</span> re.search(pattern, text, re.DOTALL)</span>
+<span id="cb9-17"><a href="#cb9-17"></a></span>
+<span id="cb9-18"><a href="#cb9-18"></a><span class="co"># Output the results</span></span>
+<span id="cb9-19"><a href="#cb9-19"></a><span class="bu">print</span>(<span class="st">"Without re.DOTALL:"</span>, match_without_dotall.group(<span class="dv">1</span>) <span class="cf">if</span> match_without_dotall <span class="cf">else</span> <span class="st">"No match"</span>)</span>
+<span id="cb9-20"><a href="#cb9-20"></a><span class="bu">print</span>(<span class="st">"With re.DOTALL:"</span>, match_with_dotall.group(<span class="dv">1</span>) <span class="cf">if</span> match_with_dotall <span class="cf">else</span> <span class="st">"No match"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Without re.DOTALL: No match
+With re.DOTALL: 
+this is a test
+string with multiple </code></pre>
+</div>
+</div>
+</section>
+<section id="question-mark" class="slide level2 scrollable">
+<h2>Question mark</h2>
+<ul>
+<li>The question mark means that either the previous character will be matched or nothing</li>
+</ul>
+<div class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a><span class="im">import</span> re</span>
+<span id="cb11-2"><a href="#cb11-2"></a></span>
+<span id="cb11-3"><a href="#cb11-3"></a>string <span class="op">=</span> <span class="st">"colour, color"</span></span>
+<span id="cb11-4"><a href="#cb11-4"></a><span class="bu">print</span>(<span class="st">'Matching "colour" or "color": '</span>,re.findall(<span class="vs">r"colou?r"</span>, string))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Matching "colour" or "color":  ['colour', 'color']</code></pre>
+</div>
+</div>
+</section>
+<section id="kleene-star" class="slide level2 scrollable">
+<h2>Kleene star</h2>
+<ul>
+<li><p>Asterisk or <strong>Kleene *</strong> (pronounced as “cleany star”) after a character or regular expression means matching any number of the repeated character or the regular expression. For example, <code>a*</code> matches “a”, “aa”, “aaa”, etc.</p></li>
+<li><p>This will include zero times repeated, for example, <code>a*</code> matches the start of “bbb” since “bbb” starts with zero repetitions of “a”. To avoid such matches use <code>aa*</code>, which will match only repetitions “a” following the first “a”.</p></li>
+</ul>
+<div class="columns">
+<div class="column" style="width:10%;">
+<p><img data-src="ChatGPT_logo.png"></p>
+</div><div class="column" style="width:90%;">
+<blockquote>
+<p>Write a regular expression with re matching words with any number of “a” between “b” and “!”. Examples: “baa!”, “baaaaa!”</p>
+</blockquote>
+</div>
+</div>
+<div class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1"></a><span class="im">import</span> re</span>
+<span id="cb13-2"><a href="#cb13-2"></a></span>
+<span id="cb13-3"><a href="#cb13-3"></a>text <span class="op">=</span> <span class="st">"baa! baaaa!"</span></span>
+<span id="cb13-4"><a href="#cb13-4"></a></span>
+<span id="cb13-5"><a href="#cb13-5"></a>pattern <span class="op">=</span> <span class="vs">r"b[a]*!"</span></span>
+<span id="cb13-6"><a href="#cb13-6"></a>matches <span class="op">=</span> re.findall(pattern, text)</span>
+<span id="cb13-7"><a href="#cb13-7"></a><span class="bu">print</span>(matches)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>['baa!', 'baaaa!']</code></pre>
+</div>
+</div>
+<ul>
+<li>Using Kleene * will create more complex patterns: <code>r"[ab]*</code> will match “aaaa”, “bbbbb”, “ababababbbab”</li>
+</ul>
+</section>
+<section id="kleene-plus" class="slide level2 scrollable">
+<h2>Kleene plus</h2>
+<ul>
+<li><p><strong>Kleene +</strong> works similar to Kleene *, but matches at least one occurrence of the immediately preceding character or regular expression.</p></li>
+<li><p>Matching an integer with any number of digits using Kleene * is done by <code>r"[0-9][0-9]*"</code>. Note that the first <code>[0-9]</code> is necessary to ensure that the integer starts with at least 1 digit.</p></li>
+<li><p>A shorter way of doing it using Kleene + is <code>r"[0-9]+"</code></p></li>
+</ul>
+</section>
+<section id="anchors" class="slide level2 scrollable">
+<h2>Anchors</h2>
+<ul>
+<li><p>Anchors are special characters that anchor regular expressions to particular places in a string.</p></li>
+<li><p>The most common anchors are the caret <code>^</code> and the dollar sign <code>$</code></p>
+<ul>
+<li><p>The caret matches the start of the line,</p></li>
+<li><p>while the dollar sign matches the end.</p></li>
+</ul></li>
+<li><p>Note that the caret now has several meanings:</p>
+<ul>
+<li><p>Negation inside the square brackets,</p></li>
+<li><p>The start of a line.</p></li>
+<li><p>Just a caret symbol</p></li>
+</ul></li>
+</ul>
+<div class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1"></a><span class="im">import</span> re</span>
+<span id="cb15-2"><a href="#cb15-2"></a></span>
+<span id="cb15-3"><a href="#cb15-3"></a>text <span class="op">=</span> <span class="st">"The dog barks. The dog jumps."</span></span>
+<span id="cb15-4"><a href="#cb15-4"></a>pattern <span class="op">=</span> <span class="vs">r"^The dog."</span></span>
+<span id="cb15-5"><a href="#cb15-5"></a>matches <span class="op">=</span> re.findall(pattern, text)</span>
+<span id="cb15-6"><a href="#cb15-6"></a><span class="bu">print</span>(matches)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>['The dog ']</code></pre>
+</div>
+</div>
+<ul>
+<li>Another anchor is <code>\b</code>; it matches a word boundary.</li>
+</ul>
+<div class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1"></a><span class="im">import</span> re</span>
+<span id="cb17-2"><a href="#cb17-2"></a></span>
+<span id="cb17-3"><a href="#cb17-3"></a>text <span class="op">=</span> <span class="st">"We met the other day."</span></span>
+<span id="cb17-4"><a href="#cb17-4"></a>pattern <span class="op">=</span> <span class="vs">r"\bthe\b"</span></span>
+<span id="cb17-5"><a href="#cb17-5"></a>matches <span class="op">=</span> re.findall(pattern, text)</span>
+<span id="cb17-6"><a href="#cb17-6"></a><span class="bu">print</span>(matches)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>['the']</code></pre>
+</div>
+</div>
+<ul>
+<li>There is a collision between Python’s string literals and regular expression sequences: in Python string literals <code>\b</code> is the backspace character, ASCII value 8. If <strong>raw string</strong> is not used Python will convert <code>\b</code> to a backspace.</li>
+</ul>
+<div class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb19" data-code-line-numbers="4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1"></a><span class="im">import</span> re</span>
+<span id="cb19-2"><a href="#cb19-2"></a></span>
+<span id="cb19-3"><a href="#cb19-3"></a>text <span class="op">=</span> <span class="st">"We met the other day."</span></span>
+<span id="cb19-4"><a href="#cb19-4"></a>pattern <span class="op">=</span> <span class="st">"</span><span class="ch">\b</span><span class="st">the</span><span class="ch">\b</span><span class="st">"</span></span>
+<span id="cb19-5"><a href="#cb19-5"></a>matches <span class="op">=</span> re.findall(pattern, text)</span>
+<span id="cb19-6"><a href="#cb19-6"></a><span class="bu">print</span>(matches)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[]</code></pre>
+</div>
+</div>
+<ul>
+<li><p>It is important to remember when we need to match words, that a word for the purposes of a regular expression is defined as <strong>any sequence of digits, underscores, or letters</strong>. In the following example:</p>
+<ul>
+<li><p>“99” is matched in text1 “There are 99 bottles of beer on the wall” because it follows a space.</p></li>
+<li><p>“99” is not matched in text2 “There are 299 bottles of beer on the wall” because it follows a number and makes a word together with it.</p></li>
+<li><p>“99” is matched in text3 “$99” because it follows a dollar sign “$”, which is not a digit, underscore or letter.</p></li>
+</ul></li>
+</ul>
+<div class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1"></a><span class="im">import</span> re</span>
+<span id="cb21-2"><a href="#cb21-2"></a></span>
+<span id="cb21-3"><a href="#cb21-3"></a>text1 <span class="op">=</span> <span class="st">"There are 99 bottles of beer on the wall"</span></span>
+<span id="cb21-4"><a href="#cb21-4"></a>text2 <span class="op">=</span> <span class="st">"There are 299 bottles of beer on the wall"</span></span>
+<span id="cb21-5"><a href="#cb21-5"></a>text3 <span class="op">=</span> <span class="st">"$99"</span></span>
+<span id="cb21-6"><a href="#cb21-6"></a></span>
+<span id="cb21-7"><a href="#cb21-7"></a>pattern <span class="op">=</span> <span class="vs">r"\b99\b"</span></span>
+<span id="cb21-8"><a href="#cb21-8"></a>matches1 <span class="op">=</span> re.findall(pattern, text1)</span>
+<span id="cb21-9"><a href="#cb21-9"></a>matches2 <span class="op">=</span> re.findall(pattern, text2)</span>
+<span id="cb21-10"><a href="#cb21-10"></a>matches3 <span class="op">=</span> re.findall(pattern, text3)</span>
+<span id="cb21-11"><a href="#cb21-11"></a></span>
+<span id="cb21-12"><a href="#cb21-12"></a><span class="bu">print</span>(<span class="st">'Matching 99 in text1: '</span>,matches1)</span>
+<span id="cb21-13"><a href="#cb21-13"></a><span class="bu">print</span>(<span class="st">'Matching 99 in text2: '</span>,matches2)</span>
+<span id="cb21-14"><a href="#cb21-14"></a><span class="bu">print</span>(<span class="st">'Matching 99 in text3: '</span>,matches3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Matching 99 in text1:  ['99']
+Matching 99 in text2:  []
+Matching 99 in text3:  ['99']</code></pre>
+</div>
+</div>
+</section>
+<section id="disjunction-and-parentheses" class="slide level2 scrollable">
+<h2>Disjunction and parentheses</h2>
+<ul>
+<li><p>If it is necessary to search for several patterns, for example different pets, like cats and dogs, making a class in square brackets does not help. In this case the pipe symbol <code>|</code>, called disjunction, creates the necessary pattern “cat|dog”.</p></li>
+<li><p>If disjunction is used within a larger sequence, it is important to remember about precedence. If the two patterns of interest are “premium” and “premia”, combining them as “premium|ia” will not work because the first pattern takes precedence. Using the parenthesis operators instead can solve the problem</p></li>
+</ul>
+<div class="columns">
+<div class="column" style="width:10%;">
+<p><img data-src="ChatGPT_logo.png"></p>
+</div><div class="column" style="width:90%;">
+<blockquote>
+<p>Write a regular expression using re that matches the words “premium” and “premia” in the sentence “This premium must be larger than other premia”</p>
+</blockquote>
+</div>
+</div>
+<div class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1"></a> <span class="im">import</span> re</span>
+<span id="cb23-2"><a href="#cb23-2"></a> </span>
+<span id="cb23-3"><a href="#cb23-3"></a>text <span class="op">=</span> <span class="st">"This premium must be larger than other premia"</span></span>
+<span id="cb23-4"><a href="#cb23-4"></a>pattern <span class="op">=</span> <span class="vs">r"\bpremi(?:um|a)\b"</span></span>
+<span id="cb23-5"><a href="#cb23-5"></a>matches <span class="op">=</span> re.findall(pattern, text)</span>
+<span id="cb23-6"><a href="#cb23-6"></a><span class="bu">print</span>(matches) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>['premium', 'premia']</code></pre>
+</div>
+</div>
+<ul>
+<li>Between the word boundaries <code>\b</code>, first the literal string “premi” is matched. Then the non-capturing group defined by <code>(?:um|a)</code> specifies the alternative suffixes. Find more on non-capturing groups in <a href="#/sec-groups">Section&nbsp;18</a></li>
+</ul>
+</section>
+<section id="matching-the-specified-number-of-occurrences-with" class="slide level2 scrollable">
+<h2>Matching the specified number of occurrences with <code>{}</code></h2>
+<ul>
+<li><p>Curly braces allow matching specified number of occurrences. For example, <code>p{2}</code> will match pattern <code>p</code> exactly 2 times, while <code>p{2,3}</code> will match the same pattern at least 2 times, but not more than 3 times.</p></li>
+<li><p>Create an example matching telephone numbers</p></li>
+</ul>
+<div class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1"></a><span class="im">import</span> re</span>
+<span id="cb25-2"><a href="#cb25-2"></a></span>
+<span id="cb25-3"><a href="#cb25-3"></a>text <span class="op">=</span> <span class="st">"+1-4231234567 +91-3754296102 +123456789"</span></span>
+<span id="cb25-4"><a href="#cb25-4"></a>pattern <span class="op">=</span> <span class="vs">r"\+\d{1,2}-\d</span><span class="sc">{10}</span><span class="vs">"</span></span>
+<span id="cb25-5"><a href="#cb25-5"></a>re.findall(pattern,text)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="12">
+<pre><code>['+1-4231234567', '+91-3754296102']</code></pre>
+</div>
+</div>
+<ul>
+<li><p>Breakdown of the pattern:</p>
+<ul>
+<li><p><code>\+</code> matches plus in front of the country code, the backslash helps escaping <code>+</code></p></li>
+<li><p><code>\d{1,2}}</code> matches one or two decimals of the country code</p></li>
+<li><p><code>-</code> matches dash between the country code and the 10-digit phone number</p></li>
+<li><p><code>d{10}</code> matches the 10-digit phone number</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="using-regular-expressions-with-re" class="slide level2 scrollable">
+<h2>Using regular expressions with <code>re</code></h2>
+<ul>
+<li>Regular expressions <strong>must be compiled</strong> into pattern objects, which have methods for various operations such as searching for pattern matches or performing string substitutions.</li>
+</ul>
+<div class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1"></a><span class="im">import</span> re</span>
+<span id="cb27-2"><a href="#cb27-2"></a></span>
+<span id="cb27-3"><a href="#cb27-3"></a>p <span class="op">=</span> re.<span class="bu">compile</span>(<span class="st">'ab*'</span>)</span>
+<span id="cb27-4"><a href="#cb27-4"></a><span class="bu">print</span>(p)</span>
+<span id="cb27-5"><a href="#cb27-5"></a>re.findall(p,<span class="st">'ab Aba abbb aAab abc'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>re.compile('ab*')</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="13">
+<pre><code>['ab', 'a', 'abbb', 'a', 'ab', 'ab']</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1"></a><span class="im">import</span> re</span>
+<span id="cb30-2"><a href="#cb30-2"></a></span>
+<span id="cb30-3"><a href="#cb30-3"></a>p <span class="op">=</span> re.<span class="bu">compile</span>(<span class="st">'ab*'</span>, re.IGNORECASE)</span>
+<span id="cb30-4"><a href="#cb30-4"></a><span class="bu">print</span>(p)</span>
+<span id="cb30-5"><a href="#cb30-5"></a>re.findall(p,<span class="st">'ab Aba abbb aAab abc'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>re.compile('ab*', re.IGNORECASE)</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="14">
+<pre><code>['ab', 'Ab', 'a', 'abbb', 'a', 'A', 'ab', 'ab']</code></pre>
+</div>
+</div>
+<ul>
+<li><p>The regular expression (RE) is passed to <code>re.compile()</code> as a string. REs are handled as strings because regular expressions aren’t part of the core Python language, and no special syntax was created for expressing them. (There are applications that don’t need REs at all, so there’s no need to bloat the language specification by including them.) Instead, the <a href="https://docs.python.org/3/library/re.html#module-re" title="re: Regular expression operations."><code>re</code></a> module is simply a C extension module included with Python.</p>
+<p>Putting REs in strings keeps the Python language simpler, but has one disadvantage which is the topic of the next section.</p></li>
+<li><p>The backslash, for example, may become a problem when used in Python. REs use <code>\</code> to indicate special forms or to allow special characters to be used without invoking their special meaning. This conflicts with Python’s usage of the same character for the same purpose in string literals.</p>
+<p>To match the string <code>\section</code>, often found in LaTeX files, we need to remember to escape <code>\</code> as <code>\\section</code>. However, to express this as a Python string literal, both backslashes must be escaped <em>again</em> with <code>\\</code> as <code>\\\\section</code>.</p>
+<p>The solution to this nuisance is to use Python’s raw string notation for regular expressions; backslashes are not handled in any special way in a string literal prefixed with <code>'r'</code>, so <code>r"\n"</code> is a two-character string containing <code>'\'</code> and <code>'n'</code>, while <code>"\n"</code> is a one-character string containing a newline. Regular expressions are written in Python code using this raw string notation.</p></li>
+</ul>
+</section>
+<section id="flags" class="slide level2 scrollable">
+<h2>Flags</h2>
+<ul>
+<li><p>Class <a href="https://docs.python.org/3/library/re.html#re.RegexFlag">re.RegexFlag</a> contains flag constants that can be used in the functions of <code>re</code></p></li>
+<li><p><code>re.A</code>, <code>re.ASCII</code>. Make <code>\w</code>, <code>\W</code>, <code>\b</code>, <code>\B</code>, <code>\d</code>, <code>\D</code>, <code>\s</code>, and <code>\S</code> perform ASCII-only matching instead of full Unicode matching. This is only meaningful for Unicode, and is ignored for byte patterns. Corresponds to inline flag <code>(?a)</code>.</p></li>
+<li><p><code>re.DEBUG</code>. Display debug information about compiled expression. No corresponding inline flag.</p></li>
+<li><p><code>re.I</code> or <code>re.IGNORECASE</code>. Perform case-insensitive matching; expressions like <code>[A-Z]</code> will also match lowercase letters.</p></li>
+<li><p><code>re.L</code> or <code>re.LOCALE</code>. Make <code>\w</code>, <code>\W</code>, <code>\b</code>, <code>\B</code> and case-sensitive matching dependent on the current locale. This flag can be used only with bytes patterns. The use of this flag is discouraged as the locale mechanism is very unreliable, it only handles one “culture” at a time, and it only works with 8-bit locales.</p></li>
+<li><p><code>re.M</code>,<code>re.MULTILINE</code>. When specified, the pattern character <code>'^'</code> matches at the beginning of the string <strong>and at the beginning of each line</strong> (immediately following each newline); and the character pattern <code>'S'</code> matches at the end of the string <strong>and at the end of each line</strong> (immediately preceding each newline). Corresponds to the inline flag <code>(?m)</code></p></li>
+<li><p><code>re.NOFLAG</code> Indicates no flag being applied, the value is <code>0</code>.</p></li>
+<li><p><code>re.S</code> or <code>re.DOTALL</code>. Make the <code>'.'</code> special character match any character at all, including a newline; without this flag <code>'.'</code> will match anything except a newline. Corresponds to the inline flag <code>(?s)</code>.</p></li>
+<li><p><code>re.X</code> or <code>re.VERBOSE</code>. This flag allows you to write regular expressions that look nicer and are more readable by allowing you to visually separate logical sections of the pattern and add comments. Whitespace within the pattern is ignored, except when in a character class, or when preceded by an unescaped backslash, or within tokens like <code>*?</code>, <code>(?:</code>, or <code>(?P&lt;…&gt;</code>. For example, <code>(? :</code> and <code>* ?</code> are not allowed. When a line contains a <code>#</code> that is not in a character class and is not preceded by an unescaped backslash, all characters from the leftmost such <code>#</code> through the end of the line are ignored.</p></li>
+</ul>
+<div class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1"></a><span class="im">import</span> re</span>
+<span id="cb33-2"><a href="#cb33-2"></a></span>
+<span id="cb33-3"><a href="#cb33-3"></a><span class="co"># The following patterns are equivalent</span></span>
+<span id="cb33-4"><a href="#cb33-4"></a>a <span class="op">=</span> re.<span class="bu">compile</span>(<span class="vs">r"""\d +  # the integral part</span></span>
+<span id="cb33-5"><a href="#cb33-5"></a><span class="vs">                   \.    # the decimal point</span></span>
+<span id="cb33-6"><a href="#cb33-6"></a><span class="vs">                   \d *  # some fractional digits"""</span>, re.X)</span>
+<span id="cb33-7"><a href="#cb33-7"></a>                   </span>
+<span id="cb33-8"><a href="#cb33-8"></a>b <span class="op">=</span> re.<span class="bu">compile</span>(<span class="vs">r"\d+\.\d*"</span>)</span>
+<span id="cb33-9"><a href="#cb33-9"></a></span>
+<span id="cb33-10"><a href="#cb33-10"></a>matches_a <span class="op">=</span> re.findall(a,<span class="st">"3.14159265359"</span>)</span>
+<span id="cb33-11"><a href="#cb33-11"></a>matches_b <span class="op">=</span> re.findall(b,<span class="st">"3.14159265359"</span>)</span>
+<span id="cb33-12"><a href="#cb33-12"></a><span class="bu">print</span>(<span class="st">'Matches by pattern a: '</span>, matches_a)</span>
+<span id="cb33-13"><a href="#cb33-13"></a><span class="bu">print</span>(<span class="st">'Matches by pattern b: '</span>, matches_b)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Matches by pattern a:  ['3.14159265359']
+Matches by pattern b:  ['3.14159265359']</code></pre>
+</div>
+</div>
+</section>
+<section id="methods-for-performing-matches" class="slide level2 scrollable">
+<h2>Methods for performing matches</h2>
+<ul>
+<li><p>Once the compiled object with the pattern is ready, it can be matched using several methods and attributes. Complete listing of the methods is in <a href="https://docs.python.org/3/library/re.html#module-re">re</a>.</p></li>
+<li><p><code>match()</code> - Determines if the RE matches at the beginning of the string. It returns a <a href="https://docs.python.org/3/library/re.html#match-objects">match object</a>, containing information about the match: where it starts and ends, the substring it matched, and more.</p>
+<p>The methods and attributes of the match object are:</p>
+<ul>
+<li><p><code>group()</code> - Returns string matched by RE</p></li>
+<li><p><code>start()</code> - Returns the starting position of the match</p></li>
+<li><p><code>end()</code> - Returns the ending position of the match</p></li>
+<li><p><code>span()</code> - Returns a tuple containing the (start,end) positions of the match</p></li>
+</ul></li>
+</ul>
+<div class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1"></a><span class="im">import</span> re</span>
+<span id="cb35-2"><a href="#cb35-2"></a></span>
+<span id="cb35-3"><a href="#cb35-3"></a>p <span class="op">=</span> re.<span class="bu">compile</span>(<span class="vs">r'[a-z]+'</span>)</span>
+<span id="cb35-4"><a href="#cb35-4"></a>m <span class="op">=</span> p.match(<span class="st">"quick"</span>)</span>
+<span id="cb35-5"><a href="#cb35-5"></a><span class="bu">print</span>(<span class="st">'Whole match: '</span>,m)</span>
+<span id="cb35-6"><a href="#cb35-6"></a><span class="bu">print</span>(<span class="st">'Group: '</span>,m.group())</span>
+<span id="cb35-7"><a href="#cb35-7"></a><span class="bu">print</span>(<span class="st">'Start and end: '</span>,m.start(), m.end())</span>
+<span id="cb35-8"><a href="#cb35-8"></a><span class="bu">print</span>(<span class="st">'Span: '</span>,m.span())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Whole match:  &lt;re.Match object; span=(0, 5), match='quick'&gt;
+Group:  quick
+Start and end:  0 5
+Span:  (0, 5)</code></pre>
+</div>
+</div>
+<ul>
+<li><code>search()</code> - Works like <code>match()</code> but searches for one pattern <strong>anywhere</strong> in the string.</li>
+</ul>
+<div class="cell" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1"></a><span class="im">import</span> re</span>
+<span id="cb37-2"><a href="#cb37-2"></a></span>
+<span id="cb37-3"><a href="#cb37-3"></a>p <span class="op">=</span> re.<span class="bu">compile</span>(<span class="vs">r'\d+'</span>)</span>
+<span id="cb37-4"><a href="#cb37-4"></a>m_1 <span class="op">=</span> p.match(<span class="st">"12 drummers drumming, 11 pipers piping, 10 lords a-leaping"</span>)</span>
+<span id="cb37-5"><a href="#cb37-5"></a>m_2 <span class="op">=</span> p.search(<span class="st">"Twelve drummers drumming, 11 pipers piping, 10 lords a-leaping"</span>)</span>
+<span id="cb37-6"><a href="#cb37-6"></a></span>
+<span id="cb37-7"><a href="#cb37-7"></a><span class="cf">if</span> m_1:</span>
+<span id="cb37-8"><a href="#cb37-8"></a>  <span class="bu">print</span>(<span class="st">'Match found: '</span>,m_1.group())</span>
+<span id="cb37-9"><a href="#cb37-9"></a><span class="cf">else</span>:</span>
+<span id="cb37-10"><a href="#cb37-10"></a>  <span class="bu">print</span>(<span class="st">'No match'</span>)</span>
+<span id="cb37-11"><a href="#cb37-11"></a>  </span>
+<span id="cb37-12"><a href="#cb37-12"></a><span class="cf">if</span> m_2:</span>
+<span id="cb37-13"><a href="#cb37-13"></a>  <span class="bu">print</span>(<span class="st">'Match found: '</span>,m_2.group())</span>
+<span id="cb37-14"><a href="#cb37-14"></a><span class="cf">else</span>:</span>
+<span id="cb37-15"><a href="#cb37-15"></a>  <span class="bu">print</span>(<span class="st">'No match'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Match found:  12
+Match found:  11</code></pre>
+</div>
+</div>
+<ul>
+<li><code>findall()</code> - Returns a list of matching strings</li>
+</ul>
+<div class="cell" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1"></a><span class="im">import</span> re</span>
+<span id="cb39-2"><a href="#cb39-2"></a></span>
+<span id="cb39-3"><a href="#cb39-3"></a>p <span class="op">=</span> re.<span class="bu">compile</span>(<span class="vs">r'\d+'</span>)</span>
+<span id="cb39-4"><a href="#cb39-4"></a>m_1 <span class="op">=</span> p.findall(<span class="st">"12 drummers drumming, 11 pipers piping, 10 lords a-leaping"</span>)</span>
+<span id="cb39-5"><a href="#cb39-5"></a>m_2 <span class="op">=</span> p.search(<span class="st">"Twelve drummers drumming, eleven pipers piping, ten lords a-leaping"</span>)</span>
+<span id="cb39-6"><a href="#cb39-6"></a></span>
+<span id="cb39-7"><a href="#cb39-7"></a><span class="cf">if</span> m_1:</span>
+<span id="cb39-8"><a href="#cb39-8"></a>  <span class="bu">print</span>(<span class="st">'Match found: '</span>,m_1)</span>
+<span id="cb39-9"><a href="#cb39-9"></a><span class="cf">else</span>:</span>
+<span id="cb39-10"><a href="#cb39-10"></a>  <span class="bu">print</span>(<span class="st">'No match'</span>)</span>
+<span id="cb39-11"><a href="#cb39-11"></a>  </span>
+<span id="cb39-12"><a href="#cb39-12"></a><span class="cf">if</span> m_2:</span>
+<span id="cb39-13"><a href="#cb39-13"></a>  <span class="bu">print</span>(<span class="st">'Match found: '</span>,m_2.group())</span>
+<span id="cb39-14"><a href="#cb39-14"></a><span class="cf">else</span>:</span>
+<span id="cb39-15"><a href="#cb39-15"></a>  <span class="bu">print</span>(<span class="st">'No match'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Match found:  ['12', '11', '10']
+No match</code></pre>
+</div>
+</div>
+<ul>
+<li><code>finditer()</code> - While <code>findall()</code> creates the entire list of matches before returning it, <code>finditer()</code> returns a sequence of match object instances as an iterator.</li>
+</ul>
+<div class="cell" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1"></a><span class="im">import</span> re</span>
+<span id="cb41-2"><a href="#cb41-2"></a></span>
+<span id="cb41-3"><a href="#cb41-3"></a>p <span class="op">=</span> re.<span class="bu">compile</span>(<span class="vs">r'\d+'</span>)</span>
+<span id="cb41-4"><a href="#cb41-4"></a>iterator <span class="op">=</span> p.finditer(<span class="st">"12 drummers drumming, 11 ... 10 ..."</span>)</span>
+<span id="cb41-5"><a href="#cb41-5"></a><span class="bu">print</span>(iterator)</span>
+<span id="cb41-6"><a href="#cb41-6"></a></span>
+<span id="cb41-7"><a href="#cb41-7"></a><span class="cf">for</span> match <span class="kw">in</span> iterator:</span>
+<span id="cb41-8"><a href="#cb41-8"></a>  <span class="bu">print</span>(match.span())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;callable_iterator object at 0x7a6076bbd810&gt;
+(0, 2)
+(22, 24)
+(29, 31)</code></pre>
+</div>
+</div>
+<ul>
+<li><p>Module-level functions <code>match()</code>, <code>search()</code>, <code>findall()</code>, <code>finditer()</code>, <code>sub()</code>, etc. take the same arguments as the corresponding pattern method with the RE string added as the first argument, and produce the same return.</p>
+<p>These functions create the same pattern object internally, then call the appropriate method. They also store the compiled object in a cache, so future calls using the same RE will not need to compile them again.</p>
+<p>When using regex within a loop, pre-compiling the pattern reduces the number of function calls. Outside of loops, there is not much difference.</p></li>
+</ul>
+<div class="cell" data-execution_count="22">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1"></a><span class="im">import</span> re</span>
+<span id="cb43-2"><a href="#cb43-2"></a></span>
+<span id="cb43-3"><a href="#cb43-3"></a>p <span class="op">=</span> <span class="vs">r'\d+'</span></span>
+<span id="cb43-4"><a href="#cb43-4"></a>iterator <span class="op">=</span> re.finditer(p,<span class="st">"12 drummers drumming, 11 ... 10 ..."</span>)</span>
+<span id="cb43-5"><a href="#cb43-5"></a><span class="bu">print</span>(iterator)</span>
+<span id="cb43-6"><a href="#cb43-6"></a></span>
+<span id="cb43-7"><a href="#cb43-7"></a><span class="cf">for</span> match <span class="kw">in</span> iterator:</span>
+<span id="cb43-8"><a href="#cb43-8"></a>  <span class="bu">print</span>(match.span())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;callable_iterator object at 0x7a6076bbd480&gt;
+(0, 2)
+(22, 24)
+(29, 31)</code></pre>
+</div>
+</div>
+</section>
+<section id="more-on-grouping" class="slide level2 scrollable">
+<h2>More on grouping</h2>
+<ul>
+<li>Methods <code>group()</code>, <code>start()</code>, <code>end()</code>, and <code>span()</code> can take arguments to retrieve groups indicated with <code>(</code>, <code>)</code>.</li>
+<li>Groups are numbered starting with 0. Group 0 is always present; it is the whole RE, so match object methods always have group 0 as their default argument.</li>
+<li>Subgroups are numbered from left to right, from 1 upward. Groups can be nested; to determine the number, count parenthesis characters, going from left to right.</li>
+</ul>
+<div class="cell" data-execution_count="23">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1"></a><span class="im">import</span> re</span>
+<span id="cb45-2"><a href="#cb45-2"></a></span>
+<span id="cb45-3"><a href="#cb45-3"></a>p <span class="op">=</span> re.<span class="bu">compile</span>(<span class="vs">r"(a(b)c)d"</span>)</span>
+<span id="cb45-4"><a href="#cb45-4"></a>m <span class="op">=</span> p.match(<span class="st">"abcd"</span>)</span>
+<span id="cb45-5"><a href="#cb45-5"></a><span class="bu">print</span>(<span class="st">'All matches: '</span>,m, <span class="st">' Span: '</span>,m.span())      <span class="co"># Entire match</span></span>
+<span id="cb45-6"><a href="#cb45-6"></a><span class="bu">print</span>(<span class="st">'Group 0: '</span>,m.group(<span class="dv">0</span>),<span class="st">'Span: '</span>, m.span(<span class="dv">0</span>)) <span class="co"># Group 0 = entire match</span></span>
+<span id="cb45-7"><a href="#cb45-7"></a><span class="bu">print</span>(<span class="st">'Group 1: '</span>,m.group(<span class="dv">1</span>),<span class="st">'Span: '</span>, m.span(<span class="dv">1</span>)) <span class="co"># Group 1 = first parentheses</span></span>
+<span id="cb45-8"><a href="#cb45-8"></a><span class="bu">print</span>(<span class="st">'Group 2: '</span>,m.group(<span class="dv">2</span>),<span class="st">'Span: '</span>, m.span(<span class="dv">2</span>)) <span class="co"># Group 2 = second parentheses</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>All matches:  &lt;re.Match object; span=(0, 4), match='abcd'&gt;  Span:  (0, 4)
+Group 0:  abcd Span:  (0, 4)
+Group 1:  abc Span:  (0, 3)
+Group 2:  b Span:  (1, 2)</code></pre>
+</div>
+</div>
+<p>The grouping in the example is defined by the structure of capturing groups:</p>
+<ul>
+<li><p><strong><code>(a(b)c)</code></strong>:</p>
+<ul>
+<li><p><strong><code>a</code></strong>: Matches the character “a”.</p></li>
+<li><p><strong><code>(b)</code></strong>: This is a capturing group within the main capturing group. It matches the character “b”.</p></li>
+<li><p><strong><code>c</code></strong>: Matches the character “c”.</p></li>
+<li><p>The entire expression inside the outer parentheses <code>(a(b)c)</code> is itself a capturing group.</p></li>
+</ul></li>
+<li><p><strong><code>d</code></strong>: Matches the character “d” that comes immediately after the sequence described above.</p></li>
+</ul>
+<p>How the pattern works:</p>
+<ol type="1">
+<li><p>The pattern is looking for the exact sequence “abc” followed by “d”, i.e.&nbsp;“abcd”.</p></li>
+<li><p>Capturing groups:</p>
+<ol type="1">
+<li><p>The first capturing group, <code>(a(b)c)</code>, captures the entire sequence “abc”.</p></li>
+<li><p>The nested capturing group, <code>(b)</code>, captures just the “b” within the “abc” sequence.</p></li>
+</ol></li>
+</ol>
+<ul>
+<li>Method <code>group()</code> can take multiple group numbers</li>
+</ul>
+<div class="cell" data-execution_count="24">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1"></a><span class="im">import</span> re</span>
+<span id="cb47-2"><a href="#cb47-2"></a></span>
+<span id="cb47-3"><a href="#cb47-3"></a>p <span class="op">=</span> re.<span class="bu">compile</span>(<span class="vs">r"(a(b)c)d"</span>)</span>
+<span id="cb47-4"><a href="#cb47-4"></a>m <span class="op">=</span> p.match(<span class="st">"abcd"</span>)</span>
+<span id="cb47-5"><a href="#cb47-5"></a></span>
+<span id="cb47-6"><a href="#cb47-6"></a><span class="bu">print</span>(m.group(<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>('b', 'abc', 'b')</code></pre>
+</div>
+</div>
+<ul>
+<li>Method <code>groups()</code> returns a tuple of strings for all the subgroups, from 1 up to the last.</li>
+</ul>
+<div class="cell" data-execution_count="25">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1"></a><span class="im">import</span> re</span>
+<span id="cb49-2"><a href="#cb49-2"></a></span>
+<span id="cb49-3"><a href="#cb49-3"></a>p <span class="op">=</span> re.<span class="bu">compile</span>(<span class="vs">r"(a(b)c)d"</span>)</span>
+<span id="cb49-4"><a href="#cb49-4"></a>m <span class="op">=</span> p.match(<span class="st">"abcd"</span>)</span>
+<span id="cb49-5"><a href="#cb49-5"></a></span>
+<span id="cb49-6"><a href="#cb49-6"></a><span class="bu">print</span>(m.groups())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>('abc', 'b')</code></pre>
+</div>
+</div>
+<ul>
+<li>The syntax for backreferences in an expression such as <code>(...)\1</code> refers to the number of the group.</li>
+<li>Backreferences in a pattern allow you to specify that the contents of an earlier capturing group must also be found at the current location in the string. For example, <code>\1</code> will succeed if <strong>the exact contents of group 1 can be found at the current position</strong>, and fails otherwise.</li>
+<li>The following example searches for repeated words.</li>
+</ul>
+<div class="cell" data-execution_count="26">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1"></a><span class="im">import</span> re</span>
+<span id="cb51-2"><a href="#cb51-2"></a></span>
+<span id="cb51-3"><a href="#cb51-3"></a>p <span class="op">=</span> <span class="vs">r'\b(\w+)\s+\1\b'</span></span>
+<span id="cb51-4"><a href="#cb51-4"></a>text <span class="op">=</span> <span class="st">"This is is a test. Test test. Hello hello. Repeated repeated repeated word."</span></span>
+<span id="cb51-5"><a href="#cb51-5"></a>matches <span class="op">=</span>re.findall(p,text,re.IGNORECASE)</span>
+<span id="cb51-6"><a href="#cb51-6"></a><span class="bu">print</span>(matches)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>['is', 'Test', 'Hello', 'Repeated']</code></pre>
+</div>
+</div>
+<ul>
+<li>Remember that Python’s string literals also use a backslash followed by numbers to allow including arbitrary characters in a string, so be sure to use a raw string when incorporating backreferences in a RE.</li>
+</ul>
+<div class="columns">
+<div class="column" style="width:10%;">
+<p><img data-src="ChatGPT_logo.png"></p>
+</div><div class="column" style="width:90%;">
+<blockquote>
+<p>Break down the regular expression r’\b(\w+)\s+\1\b’ using as example text = “This is is a test. Test test. Hello hello. Repeated repeated repeated word.”</p>
+</blockquote>
+</div>
+</div>
+</section>
+<section id="sec-groups" class="slide level2 scrollable">
+<h2>Non-capturing and named groups</h2>
+<h3 id="using-capturing-group">Using capturing group</h3>
+<ul>
+<li><p>In the example below <code>([abc])+</code> is a capturing group that captures <code>a</code>, <code>b</code>, or <code>c</code> in one or more occurrences.</p>
+<ul>
+<li><p><code>'[abc]'</code> - is a character class that matches any one character that is either “a”, “b”, or “c”.</p></li>
+<li><p><code>'([a,b,c])'</code> is a capturing group that will capture a single character from the character class <code>'[abc]'</code>.</p></li>
+<li><p><code>'+'</code> is a quantifier meaning “one or more” of the preceding element. Here, it applies to the capturing group <code>'([a,b,c])'</code>, meaning that it will match and capture one or more occurrences of any character from the set <code>'[abc]'</code>.</p></li>
+</ul></li>
+<li><p>The expression matches the entire string <code>abc</code> following the logic:</p>
+<ul>
+<li><p><strong>Step 1</strong>. The first character <code>"a"</code> is matched from the beginning of the string <code>"abc"</code>.</p></li>
+<li><p><strong>Step 2</strong>. The first character <code>"a"</code> is matched.</p></li>
+<li><p><strong>Step 3</strong>. The <code>'+'</code> quantifier allows the pattern to continue matching, so it proceeds to match <code>"b"</code>.</p></li>
+<li><p><strong>Step 4</strong>. It continues to match <code>"c"</code> and, before stopping, captures it. The string is now fully matched, and the match is successful.</p></li>
+</ul></li>
+</ul>
+<div class="cell" data-execution_count="27">
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1"></a><span class="im">import</span> re</span>
+<span id="cb53-2"><a href="#cb53-2"></a></span>
+<span id="cb53-3"><a href="#cb53-3"></a><span class="co"># capturing group ([abc])+</span></span>
+<span id="cb53-4"><a href="#cb53-4"></a>m <span class="op">=</span> re.match(<span class="st">"([abc])+"</span>, <span class="st">"abc"</span>)</span>
+<span id="cb53-5"><a href="#cb53-5"></a><span class="bu">print</span>(<span class="st">'Capturing group match: '</span>, m,</span>
+<span id="cb53-6"><a href="#cb53-6"></a><span class="st">'</span><span class="ch">\n</span><span class="st">Capturing group group(): '</span>,m.group(),</span>
+<span id="cb53-7"><a href="#cb53-7"></a><span class="st">'</span><span class="ch">\n</span><span class="st">Capturing group groups(): '</span>,m.groups())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Capturing group match:  &lt;re.Match object; span=(0, 3), match='abc'&gt; 
+Capturing group group():  abc 
+Capturing group groups():  ('c',)</code></pre>
+</div>
+</div>
+<ul>
+<li><p>Explaining the output:</p>
+<ul>
+<li><p><code>m.group()</code> returns the entire matched string, which is <code>"abc"</code>.</p></li>
+<li><p><code>m.groups()</code> returns a tuple of all the captured groups. Since the capturing group <code>([abc])</code> matched multiple times, but only the last match is stored, it returns <code>('c')</code>.</p></li>
+</ul></li>
+</ul>
+<h3 id="using-non-capturing-group">Using non-capturing group</h3>
+<ul>
+<li><p>Changing the expression to <code>(?:[abc])+</code> makes non-capturing group, which means that although it successfully matches the string “abc”, it does not capture any specific group within the match.</p>
+<ul>
+<li><p><code>'[abc]'</code> - is the same character class.</p></li>
+<li><p>The <code>'(?:…)'</code> syntax is used to group elements in a regular expression without creating a capturing group. In this case, it groups the <code>'[abc]'</code> character class. This means the pattern will still match one character from the set <code>'[abc]'</code>, but <strong>it will not store this match in any group</strong> that can be retrieved later.</p></li>
+<li><p><code>'+'</code> is the same quantifier.</p></li>
+</ul></li>
+<li><p>Matching the pattern against the same string <code>"abc"</code> does the following:</p>
+<ul>
+<li><p><strong>Step 1</strong>. The pattern starts matching from the beginning of the string <code>"abc".</code></p></li>
+<li><p><strong>Step 2</strong>. The character <code>"a"</code> is matched first, no capture.</p></li>
+<li><p><strong>Step 3</strong>. The <code>'+'</code> quantifier allows the pattern to continue matching, so it proceeds to match <code>"b"</code>.</p></li>
+<li><p><strong>Step 4</strong>. It continues and matches <code>"c"</code>. The string is now fully matched.</p></li>
+</ul></li>
+</ul>
+<div class="cell" data-execution_count="28">
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1"></a><span class="im">import</span> re</span>
+<span id="cb55-2"><a href="#cb55-2"></a></span>
+<span id="cb55-3"><a href="#cb55-3"></a><span class="co"># non-capturing group (?:[abc])+</span></span>
+<span id="cb55-4"><a href="#cb55-4"></a>m <span class="op">=</span> re.match(<span class="st">"(?:[abc])+"</span>, <span class="st">"abc"</span>)</span>
+<span id="cb55-5"><a href="#cb55-5"></a><span class="bu">print</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">Non-capturing group match: '</span>, m,<span class="st">'</span><span class="ch">\n</span><span class="st">Non-capturing group groups(): '</span>,m.groups())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Non-capturing group match:  &lt;re.Match object; span=(0, 3), match='abc'&gt; 
+Non-capturing group groups():  ()</code></pre>
+</div>
+</div>
+<ul>
+<li>Using non-capturing groups with <code>(?:…)</code> is convenient:
+<ul>
+<li><strong>When It is necessary to modify the existing pattern without changing the numbering of other groups</strong>.</li>
+<li><strong>For performance optimization</strong>. Capturing groups require additional memory and processing time to store the matched content. In complex patterns, avoiding unnecessary captures can lead to more efficient regex execution, especially when dealing with large texts or in performance-critical applications.</li>
+<li><strong>For simplifying backreferences</strong>. Capturing groups are assigned numbers based on their order in the regex. If you have many capturing groups, it can be challenging to keep track of their numbers for backreferences (e.g., <code>\1</code>, <code>\2</code>). By using non-capturing groups, you can reduce the number of capturing groups and simplify the use of backreferences.</li>
+<li><strong>To make cleaner output</strong>. When extracting data from text using regex, the captured groups are returned as part of the match. If you’re only interested in specific parts of the text, using non-capturing groups for the rest can clean up the output, making it easier to work with and reducing the need for post-processing.</li>
+</ul></li>
+</ul>
+<h3 id="example">Example</h3>
+<ul>
+<li><p>In the following example the original pattern analyzes an email address, extracting username, domain and extension. The pattern <code>r'(\w+)\.(\w+)@(\w+\.\w+)'</code> matches:</p>
+<ul>
+<li><p>Username before the dot as group 1.</p></li>
+<li><p>The domain between the dot and the symbol “@” as group 2.</p></li>
+<li><p>The email extension after the “@” symbol as group 3.</p></li>
+</ul></li>
+</ul>
+<div class="cell" data-execution_count="29">
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1"></a><span class="im">import</span> re</span>
+<span id="cb57-2"><a href="#cb57-2"></a></span>
+<span id="cb57-3"><a href="#cb57-3"></a>email <span class="op">=</span> <span class="st">"john.doe@example.com"</span></span>
+<span id="cb57-4"><a href="#cb57-4"></a></span>
+<span id="cb57-5"><a href="#cb57-5"></a>pattern <span class="op">=</span> <span class="vs">r'(\w+)\.(\w+)@(\w+\.\w+)'</span></span>
+<span id="cb57-6"><a href="#cb57-6"></a></span>
+<span id="cb57-7"><a href="#cb57-7"></a>match <span class="op">=</span> re.match(pattern, email)</span>
+<span id="cb57-8"><a href="#cb57-8"></a><span class="cf">if</span> match:</span>
+<span id="cb57-9"><a href="#cb57-9"></a>    username <span class="op">=</span> match.group(<span class="dv">1</span>)</span>
+<span id="cb57-10"><a href="#cb57-10"></a>    domain <span class="op">=</span> match.group(<span class="dv">2</span>)</span>
+<span id="cb57-11"><a href="#cb57-11"></a>    extension <span class="op">=</span> match.group(<span class="dv">3</span>)</span>
+<span id="cb57-12"><a href="#cb57-12"></a></span>
+<span id="cb57-13"><a href="#cb57-13"></a>    <span class="bu">print</span>(<span class="st">"Username:"</span>, username)</span>
+<span id="cb57-14"><a href="#cb57-14"></a>    <span class="bu">print</span>(<span class="st">"Domain:"</span>, domain)</span>
+<span id="cb57-15"><a href="#cb57-15"></a>    <span class="bu">print</span>(<span class="st">"Extension:"</span>, extension)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Username: john
+Domain: doe
+Extension: example.com</code></pre>
+</div>
+</div>
+<ul>
+<li>Now without breaking the code extracting the matched groups, modify the pattern by adding a new non-capturing group with the entire email address.</li>
+</ul>
+<div class="cell" data-execution_count="30">
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb59-1"><a href="#cb59-1"></a><span class="im">import</span> re</span>
+<span id="cb59-2"><a href="#cb59-2"></a></span>
+<span id="cb59-3"><a href="#cb59-3"></a>email <span class="op">=</span> <span class="st">"john.doe@example.com"</span></span>
+<span id="cb59-4"><a href="#cb59-4"></a></span>
+<span id="cb59-5"><a href="#cb59-5"></a>pattern <span class="op">=</span> <span class="vs">r'((\w+)\.(\w+)@(\w+\.\w+))|(?:\w+@\w+\.\w+)'</span></span>
+<span id="cb59-6"><a href="#cb59-6"></a></span>
+<span id="cb59-7"><a href="#cb59-7"></a>match <span class="op">=</span> re.match(pattern, email)</span>
+<span id="cb59-8"><a href="#cb59-8"></a><span class="cf">if</span> match:</span>
+<span id="cb59-9"><a href="#cb59-9"></a>    full_email <span class="op">=</span> match.group(<span class="dv">1</span>)</span>
+<span id="cb59-10"><a href="#cb59-10"></a>    username <span class="op">=</span> match.group(<span class="dv">2</span>)</span>
+<span id="cb59-11"><a href="#cb59-11"></a>    domain <span class="op">=</span> match.group(<span class="dv">3</span>)</span>
+<span id="cb59-12"><a href="#cb59-12"></a>    extension <span class="op">=</span> match.group(<span class="dv">4</span>)</span>
+<span id="cb59-13"><a href="#cb59-13"></a></span>
+<span id="cb59-14"><a href="#cb59-14"></a>    <span class="bu">print</span>(<span class="st">"Full Email:"</span>, full_email)</span>
+<span id="cb59-15"><a href="#cb59-15"></a>    <span class="bu">print</span>(<span class="st">"Username:"</span>, username)</span>
+<span id="cb59-16"><a href="#cb59-16"></a>    <span class="bu">print</span>(<span class="st">"Domain:"</span>, domain)</span>
+<span id="cb59-17"><a href="#cb59-17"></a>    <span class="bu">print</span>(<span class="st">"Extension:"</span>, extension)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Full Email: john.doe@example.com
+Username: john
+Domain: doe
+Extension: example.com</code></pre>
+</div>
+</div>
+<h3 id="named-groups">Named groups</h3>
+<ul>
+<li>Named groups can be referred by name instead of numbers. The syntax for a named group is one of the Python-specific extensions: <code>(?P&lt;name&gt;…)</code>. Named groups are still given numbers.</li>
+</ul>
+<div class="cell" data-execution_count="31">
+<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb61-1"><a href="#cb61-1"></a><span class="im">import</span> re</span>
+<span id="cb61-2"><a href="#cb61-2"></a></span>
+<span id="cb61-3"><a href="#cb61-3"></a>email <span class="op">=</span> <span class="st">"john.doe@example.com"</span></span>
+<span id="cb61-4"><a href="#cb61-4"></a></span>
+<span id="cb61-5"><a href="#cb61-5"></a>pattern <span class="op">=</span> <span class="vs">r'(?P&lt;full_email&gt;(?P&lt;username&gt;\w+)\.(?P&lt;domain&gt;\w+)@(?P&lt;extension&gt;\w+\.\w+))|(?P&lt;invalid_email&gt;\w+@\w+\.\w+)'</span></span>
+<span id="cb61-6"><a href="#cb61-6"></a></span>
+<span id="cb61-7"><a href="#cb61-7"></a>match <span class="op">=</span> re.match(pattern, email)</span>
+<span id="cb61-8"><a href="#cb61-8"></a><span class="cf">if</span> match:</span>
+<span id="cb61-9"><a href="#cb61-9"></a>    full_email <span class="op">=</span> match.group(<span class="st">'full_email'</span>)</span>
+<span id="cb61-10"><a href="#cb61-10"></a>    username <span class="op">=</span> match.group(<span class="st">'username'</span>)</span>
+<span id="cb61-11"><a href="#cb61-11"></a>    domain <span class="op">=</span> match.group(<span class="st">'domain'</span>)</span>
+<span id="cb61-12"><a href="#cb61-12"></a>    extension <span class="op">=</span> match.group(<span class="st">'extension'</span>)</span>
+<span id="cb61-13"><a href="#cb61-13"></a>    invalid_email <span class="op">=</span> match.group(<span class="st">'invalid_email'</span>)</span>
+<span id="cb61-14"><a href="#cb61-14"></a></span>
+<span id="cb61-15"><a href="#cb61-15"></a>    <span class="bu">print</span>(<span class="st">"Full Email:"</span>, full_email)</span>
+<span id="cb61-16"><a href="#cb61-16"></a>    <span class="bu">print</span>(<span class="st">"Username:"</span>, username)</span>
+<span id="cb61-17"><a href="#cb61-17"></a>    <span class="bu">print</span>(<span class="st">"Domain:"</span>, domain)</span>
+<span id="cb61-18"><a href="#cb61-18"></a>    <span class="bu">print</span>(<span class="st">"Extension:"</span>, extension)</span>
+<span id="cb61-19"><a href="#cb61-19"></a>    <span class="bu">print</span>(<span class="st">"Invalid Email:"</span>, invalid_email)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Full Email: john.doe@example.com
+Username: john
+Domain: doe
+Extension: example.com
+Invalid Email: None</code></pre>
+</div>
+</div>
+<ul>
+<li>Additionally, named groups can be retrieved as a dictionary with <code>groupdict()</code></li>
+</ul>
+<div class="cell" data-execution_count="32">
+<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb63-1"><a href="#cb63-1"></a><span class="im">import</span> re</span>
+<span id="cb63-2"><a href="#cb63-2"></a></span>
+<span id="cb63-3"><a href="#cb63-3"></a>email <span class="op">=</span> <span class="st">"john.doe@example.com"</span></span>
+<span id="cb63-4"><a href="#cb63-4"></a></span>
+<span id="cb63-5"><a href="#cb63-5"></a>pattern <span class="op">=</span> <span class="vs">r'(?P&lt;full_email&gt;(?P&lt;username&gt;\w+)\.(?P&lt;domain&gt;\w+)@(?P&lt;extension&gt;\w+\.\w+))|(?P&lt;invalid_email&gt;\w+@\w+\.\w+)'</span></span>
+<span id="cb63-6"><a href="#cb63-6"></a></span>
+<span id="cb63-7"><a href="#cb63-7"></a>match <span class="op">=</span> re.match(pattern, email)</span>
+<span id="cb63-8"><a href="#cb63-8"></a><span class="cf">if</span> match:</span>
+<span id="cb63-9"><a href="#cb63-9"></a>    match.groupdict()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>Backreferencing of a named group can be done using the syntax of a Python extension: <code>(?P=name)</code></li>
+</ul>
+</section>
+<section id="lookahead-assertions" class="slide level2 scrollable">
+<h2>Lookahead assertions</h2>
+<ul>
+<li><p>Lookahead assertions are non-capturing groups that allow to perform more complex pattern matching while not affecting the actual matches returned by the regular expression. They can be of two types:</p>
+<ul>
+<li><p><strong>Positive lookahead assertion</strong> <code>(?=…)</code>. Succeeds if the pattern represented by <code>…</code>, <strong>exists right after the current position</strong> in the string. The pattern itself is not included in the match result.</p>
+<ul>
+<li>Match the word “apple” only if it’s followed by the word “pie”: <code>apple(?=\spie)</code>. In “I love apple pie” the match will be “apple”.Note: “pie” not included.</li>
+</ul></li>
+<li><p><strong>Negative lookahead assertion</strong> <code>(?!…)</code>. Unlike positive lookahead assertion this checks if a specific pattern does not exist right after the current position in the string.</p>
+<ul>
+<li>Match the word “apple” only if it is <strong>not</strong> followed by the word “pie”: <code>apple(?!\spie)</code>.</li>
+</ul></li>
+</ul></li>
+</ul>
+<h3 id="example-of-positive-lookahead-assertion">Example of positive lookahead assertion</h3>
+<ul>
+<li>To better understand the POS of the word “stationary” in the text “Now we sit stationary working to pay tax in an office filled with stationary”, match the words it follows.</li>
+</ul>
+<div class="cell" data-execution_count="33">
+<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb64-1"><a href="#cb64-1"></a><span class="im">import</span> re</span>
+<span id="cb64-2"><a href="#cb64-2"></a></span>
+<span id="cb64-3"><a href="#cb64-3"></a>text <span class="op">=</span> <span class="st">"'Now we sit stationary working to pay tax in an office filled with stationary'."</span></span>
+<span id="cb64-4"><a href="#cb64-4"></a>pattern <span class="op">=</span> <span class="vs">r'\b\w+(?=\sstationary\b)'</span></span>
+<span id="cb64-5"><a href="#cb64-5"></a></span>
+<span id="cb64-6"><a href="#cb64-6"></a>matches <span class="op">=</span> re.findall(pattern, text)</span>
+<span id="cb64-7"><a href="#cb64-7"></a><span class="bu">print</span>(matches)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>['sit', 'with']</code></pre>
+</div>
+</div>
+<ul>
+<li><p>In the pattern <code>\b\w+(?=\sstationary\b)</code>:</p>
+<ul>
+<li><p><code>\b</code> is a word boundary anchor matching the start or end of a word.</p></li>
+<li><p><code>\w+</code> matches one or more word characters (letters, digits, or underscores).</p></li>
+<li><p><code>(?=\sstationary\b)</code> is a positive lookahead assertion that checks if the word is followed by a space and the word “stationary”. It ensures that the match should have “stationary” immediately following the word but doesn’t include “stationary” in the match result.</p></li>
+</ul></li>
+</ul>
+<h3 id="example-of-negative-lookahead-assertion">Example of negative lookahead assertion</h3>
+<ul>
+<li><p>Create a regular expression matching all file names of the format “filename.extension”, with the exception of files with extension “.bat”</p></li>
+<li><p>First, look at a case matching any file name and splitting it apart into a base name and an extension without exceptions. The pattern is simple: <code>\S+[.]\w+</code>.</p>
+<ul>
+<li><p><code>\S+</code> matches one or more non-whitespace characters, representing the name of the file.</p></li>
+<li><p><code>[.]</code> is a character class matching a single dot as a literal (separating the name and the extension).</p></li>
+<li><p><code>\w+</code> matches one or more occurrences of any character, including none but excluding new line after the dot, representing the extension.</p></li>
+</ul></li>
+</ul>
+<div class="cell" data-execution_count="34">
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb66-1"><a href="#cb66-1"></a><span class="im">import</span> re</span>
+<span id="cb66-2"><a href="#cb66-2"></a></span>
+<span id="cb66-3"><a href="#cb66-3"></a>text <span class="op">=</span> <span class="st">"file_1.pdf file_2.doc file_3.bat file_4.csv file_5.bar file_6.cf"</span></span>
+<span id="cb66-4"><a href="#cb66-4"></a>p <span class="op">=</span> <span class="vs">r'\S+[.]\w+'</span></span>
+<span id="cb66-5"><a href="#cb66-5"></a>m <span class="op">=</span> re.findall(p,text)</span>
+<span id="cb66-6"><a href="#cb66-6"></a><span class="bu">print</span>(<span class="st">'Match: '</span>,m)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Match:  ['file_1.pdf', 'file_2.doc', 'file_3.bat', 'file_4.csv', 'file_5.bar', 'file_6.cf']</code></pre>
+</div>
+</div>
+<ul>
+<li><p>The next step is modifying this pattern to exclude file names with extensions “.bat”.</p>
+<ul>
+<li><p>Attempt 1: constrain the first character of the extension to be not “b”: <code>\S+[.][^b]\w+</code>.</p>
+<div class="cell" data-execution_count="35">
+<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb68-1"><a href="#cb68-1"></a><span class="im">import</span> re</span>
+<span id="cb68-2"><a href="#cb68-2"></a></span>
+<span id="cb68-3"><a href="#cb68-3"></a>text <span class="op">=</span> <span class="st">"file_1.pdf file_2.doc file_3.bat file_4.csv file_5.bar file_6.cf"</span></span>
+<span id="cb68-4"><a href="#cb68-4"></a>p <span class="op">=</span> <span class="vs">r'\S+[.][^b]\w+'</span></span>
+<span id="cb68-5"><a href="#cb68-5"></a>m <span class="op">=</span> re.findall(p,text)</span>
+<span id="cb68-6"><a href="#cb68-6"></a><span class="bu">print</span>(<span class="st">'Match: '</span>,m)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Match:  ['file_1.pdf', 'file_2.doc', 'file_4.csv', 'file_6.cf']</code></pre>
+</div>
+</div></li>
+<li><p>Unfortunately, this pattern excluded not only “.bat” file but also “.bar”. Continuing in the same way, we could exclude files by an increasingly complex expression, checking for files with “b” in the first position of the extension, “a” in the second position, and “t” in the third position. A much more elegant solution is given by the regular expression with the negative lookahead assertion <code>\S+[.](?!bat$)[^.]*$</code>.</p>
+<div class="cell" data-execution_count="36">
+<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb70-1"><a href="#cb70-1"></a><span class="im">import</span> re</span>
+<span id="cb70-2"><a href="#cb70-2"></a></span>
+<span id="cb70-3"><a href="#cb70-3"></a>text <span class="op">=</span> <span class="st">"file_1.pdf file_2.doc file_3.bat file_4.csv file_5.bar file_6.cf"</span></span>
+<span id="cb70-4"><a href="#cb70-4"></a></span>
+<span id="cb70-5"><a href="#cb70-5"></a>p <span class="op">=</span> <span class="vs">r"\S+[.](?!bat)\w+"</span></span>
+<span id="cb70-6"><a href="#cb70-6"></a>m <span class="op">=</span> re.findall(p, text)</span>
+<span id="cb70-7"><a href="#cb70-7"></a></span>
+<span id="cb70-8"><a href="#cb70-8"></a><span class="bu">print</span>(m)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>['file_1.pdf', 'file_2.doc', 'file_4.csv', 'file_5.bar', 'file_6.cf']</code></pre>
+</div>
+</div></li>
+</ul></li>
+<li><p>Breaking up the final pattern matching all file names, except with extensions “.bat”:</p>
+<ul>
+<li><p><code>\S+</code> matches one or more non-whitespace characters. This ensures that we match the file names.</p></li>
+<li><p><code>[.]</code> matches a literal period (dot) character.</p></li>
+<li><p><code>(?!bat)</code> is a negative lookahead assertion. It ensures that the following characters are not “bat”. In other words, it excludes file names with the extension “bat”.</p></li>
+<li><p><code>\w+</code> matches one or more word characters (letters, digits, or underscores). This ensures we capture the extension after the period.</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="modifying-strings" class="slide level2 scrollable">
+<h2>Modifying strings</h2>
+<ul>
+<li>Searching the text against a static pattern is only one of several applications of regular expressions. The following methods are commonly used to modify strings.</li>
+</ul>
+<table>
+<colgroup>
+<col style="width: 17%">
+<col style="width: 82%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Method/Attribute</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>split()</code></td>
+<td>Split the string into a list, splitting it wherever the RE matches</td>
+</tr>
+<tr class="even">
+<td><code>sub()</code></td>
+<td>Find all substrings where the RE matches, and replace them with a different string</td>
+</tr>
+<tr class="odd">
+<td><code>subn()</code></td>
+<td>Does the same thing as <code>sub()</code>, but returns the new string and the number of replacements</td>
+</tr>
+</tbody>
+</table>
+<h3 id="splitting-strings">Splitting strings</h3>
+<ul>
+<li><p>The <a href="https://docs.python.org/3/library/re.html#re.Pattern.split" title="re.Pattern.split"><code>split()</code></a> method of a pattern splits a string apart wherever the RE matches, returning a list of the pieces.</p></li>
+<li><p><code>re.split()</code> is similar to the <code>str.split()</code> method of strings but provides much more generality in the delimiters that you can split by; <code>str.split()</code> only supports splitting by white space or by a fixed string.</p></li>
+</ul>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 4%">
+<col style="width: 46%">
+<col style="width: 48%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th><code>str.split()</code></th>
+<th><code>re.split()</code></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Purpose</strong></td>
+<td>A method of Python’s <strong>string class</strong> that splits a string into a list of substrings based on a specified delimiter (separator). If no delimiter is provided, it splits the string based on any whitespace by default.</td>
+<td>A function from Python’s <strong><code>re</code></strong> (regular expression) module that splits a string based on a regex pattern. This allows for <strong>much more complex and flexible splitting</strong> based on patterns rather than just fixed delimiters.</td>
+</tr>
+<tr class="even">
+<td><strong>Syntax</strong></td>
+<td><p><code>str.split(separator=Nonr,maxsplit=-1)</code></p>
+<ul>
+<li><p><strong>separator</strong>: The delimiter to split the string on. Default is whitespace.</p></li>
+<li><p><strong>maxsplit</strong>: The maximum number of splits to perform. Default is <code>-1</code>, which means “no limit.”</p></li>
+</ul></td>
+<td><p><code>re.split(pattern, string, maxsplit=0,flags=0)</code></p>
+<ul>
+<li><p><strong>pattern:</strong> The regex pattern used for splitting.</p></li>
+<li><p><strong>string:</strong> The string to split.</p></li>
+<li><p><strong>maxsplit:</strong> The maximum number of splits to perform. Default is <code>0</code>, which means “no limit.”</p></li>
+<li><p><strong>flags:</strong> Optional regex flags.</p></li>
+</ul></td>
+</tr>
+<tr class="odd">
+<td><strong>Example</strong></td>
+<td><code>text.split(",")</code> splits <code>text="apple,banana,orange"</code> into <code>['apple','banana','orange']</code></td>
+<td><code>re.split(r'[,;|]',text)</code> splits <code>text="apple,banana;orange|grape"</code> into <code>['apple','banana','orange','grape']</code></td>
+</tr>
+<tr class="even">
+<td><strong>When preferred</strong></td>
+<td>Use <code>str.split()</code> when you have a <strong>fixed, simple delimiter</strong> and do not need complex splitting logic. It is straightforward and efficient for basic splitting tasks.</td>
+<td>Use <code>re.split()</code> when you need to split a string based on <strong>multiple delimiters, complex patterns, or when the splitting criteria require the flexibility</strong> of regular expressions.</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>In the following example the splitting delimiter is any sequence of non-alphanumeric characters.</li>
+</ul>
+<div class="cell" data-execution_count="37">
+<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb72-1"><a href="#cb72-1"></a><span class="im">import</span> re</span>
+<span id="cb72-2"><a href="#cb72-2"></a></span>
+<span id="cb72-3"><a href="#cb72-3"></a>p <span class="op">=</span> re.<span class="bu">compile</span>(<span class="vs">r'\W+'</span>)</span>
+<span id="cb72-4"><a href="#cb72-4"></a></span>
+<span id="cb72-5"><a href="#cb72-5"></a><span class="co"># maxsplit is 0</span></span>
+<span id="cb72-6"><a href="#cb72-6"></a><span class="bu">print</span>(<span class="st">'maxsplit is 0: </span><span class="ch">\n</span><span class="st">'</span>,p.split(<span class="st">'This is a test, short and sweet, of split().'</span>))</span>
+<span id="cb72-7"><a href="#cb72-7"></a></span>
+<span id="cb72-8"><a href="#cb72-8"></a><span class="co"># maxsplit is 3</span></span>
+<span id="cb72-9"><a href="#cb72-9"></a><span class="bu">print</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">maxsplit is 3: </span><span class="ch">\n</span><span class="st">'</span>,p.split(<span class="st">'This is a test, short and sweet, of split().'</span>,<span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>maxsplit is 0: 
+ ['This', 'is', 'a', 'test', 'short', 'and', 'sweet', 'of', 'split', '']
+
+maxsplit is 3: 
+ ['This', 'is', 'a', 'test, short and sweet, of split().']</code></pre>
+</div>
+</div>
+<ul>
+<li>Sometimes it is important to show not only the text between the delimiters but also the matched delimiters themselves.</li>
+</ul>
+<div class="cell" data-execution_count="38">
+<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb74-1"><a href="#cb74-1"></a><span class="im">import</span> re</span>
+<span id="cb74-2"><a href="#cb74-2"></a></span>
+<span id="cb74-3"><a href="#cb74-3"></a>p1 <span class="op">=</span> re.<span class="bu">compile</span>(<span class="vs">r'\W+'</span>)</span>
+<span id="cb74-4"><a href="#cb74-4"></a>p2 <span class="op">=</span> re.<span class="bu">compile</span>(<span class="vs">r'(\W+)'</span>)</span>
+<span id="cb74-5"><a href="#cb74-5"></a></span>
+<span id="cb74-6"><a href="#cb74-6"></a><span class="bu">print</span>(<span class="st">'No delimiters returned: </span><span class="ch">\n</span><span class="st">'</span>,p1.split(<span class="st">'This... is a test.'</span>))</span>
+<span id="cb74-7"><a href="#cb74-7"></a><span class="bu">print</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">Delimiters returned: </span><span class="ch">\n</span><span class="st">'</span>,p2.split(<span class="st">'This... is a test.'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>No delimiters returned: 
+ ['This', 'is', 'a', 'test', '']
+
+Delimiters returned: 
+ ['This', '... ', 'is', ' ', 'a', ' ', 'test', '.', '']</code></pre>
+</div>
+</div>
+</section>
+<section id="search-and-replace" class="slide level2 scrollable">
+<h2>Search and replace</h2>
+<ul>
+<li><p>Another common task is to find all the matches for a pattern, and replace them with a different string. The <a href="https://docs.python.org/3/library/re.html#re.Pattern.sub" title="re.Pattern.sub"><code>sub()</code></a> method takes a replacement value, which can be either a string or a function, and the string to be processed.</p></li>
+<li><p><code>.sub(replacement, string[, count=0])</code> returns the string obtained by replacing the leftmost non-overlapping occurrences of the RE in <em><code>string</code></em> by the replacement <em><code>replacement</code></em>. If the pattern is not found, <em><code>string</code></em> is returned unchanged. The optional argument <em><code>count</code></em> is the maximum number of pattern occurrences to be replaced; <em><code>count</code></em> must be a non-negative integer. The default value of 0 means to replace all occurrences.</p></li>
+</ul>
+<div class="cell" data-execution_count="39">
+<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb76-1"><a href="#cb76-1"></a><span class="im">import</span> re</span>
+<span id="cb76-2"><a href="#cb76-2"></a></span>
+<span id="cb76-3"><a href="#cb76-3"></a>p <span class="op">=</span> re.<span class="bu">compile</span>(<span class="st">'(blue|white|red)'</span>)</span>
+<span id="cb76-4"><a href="#cb76-4"></a></span>
+<span id="cb76-5"><a href="#cb76-5"></a><span class="co"># count=0</span></span>
+<span id="cb76-6"><a href="#cb76-6"></a><span class="bu">print</span>(<span class="st">'Count=0: </span><span class="ch">\n</span><span class="st">'</span>,p.sub(<span class="st">'colour'</span>, <span class="st">'blue socks and red shoes'</span>))</span>
+<span id="cb76-7"><a href="#cb76-7"></a></span>
+<span id="cb76-8"><a href="#cb76-8"></a><span class="co"># count=1</span></span>
+<span id="cb76-9"><a href="#cb76-9"></a><span class="bu">print</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">Count=1: </span><span class="ch">\n</span><span class="st">'</span>,p.sub(<span class="st">'colour'</span>, <span class="st">'blue socks and red shoes'</span>,count<span class="op">=</span><span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Count=0: 
+ colour socks and colour shoes
+
+Count=1: 
+ colour socks and red shoes</code></pre>
+</div>
+</div>
+<ul>
+<li>The <code>subn()</code> method does the same, but returns a 2-tuple containing the new string value and the number of replacements that were performed:</li>
+</ul>
+<div class="cell" data-execution_count="40">
+<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb78-1"><a href="#cb78-1"></a><span class="im">import</span> re</span>
+<span id="cb78-2"><a href="#cb78-2"></a> </span>
+<span id="cb78-3"><a href="#cb78-3"></a>p <span class="op">=</span> re.<span class="bu">compile</span>(<span class="st">'(blue|white|red)'</span>)</span>
+<span id="cb78-4"><a href="#cb78-4"></a></span>
+<span id="cb78-5"><a href="#cb78-5"></a><span class="co"># some colours matched</span></span>
+<span id="cb78-6"><a href="#cb78-6"></a><span class="bu">print</span>(<span class="st">'Some colours matched: </span><span class="ch">\n</span><span class="st">'</span>,p.subn(<span class="st">'colour'</span>, <span class="st">'blue socks and red shoes'</span>))</span>
+<span id="cb78-7"><a href="#cb78-7"></a></span>
+<span id="cb78-8"><a href="#cb78-8"></a><span class="co"># no colours in the string</span></span>
+<span id="cb78-9"><a href="#cb78-9"></a><span class="bu">print</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">No colours in the string: </span><span class="ch">\n</span><span class="st">'</span>,p.subn(<span class="st">'colour'</span>, <span class="st">'no colours at all'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Some colours matched: 
+ ('colour socks and colour shoes', 2)
+
+No colours in the string: 
+ ('no colours at all', 0)</code></pre>
+</div>
+</div>
+<ul>
+<li>Empty matches are replaced only when they are not adjacent to a previous empty match.</li>
+</ul>
+<div class="cell" data-execution_count="41">
+<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb80-1"><a href="#cb80-1"></a><span class="im">import</span> re</span>
+<span id="cb80-2"><a href="#cb80-2"></a> </span>
+<span id="cb80-3"><a href="#cb80-3"></a>p <span class="op">=</span> re.<span class="bu">compile</span>(<span class="st">'x*'</span>)</span>
+<span id="cb80-4"><a href="#cb80-4"></a>p.sub(<span class="st">'-'</span>, <span class="st">'abxd'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="39">
+<pre><code>'-a-b--d-'</code></pre>
+</div>
+</div>
+<ul>
+<li><p>If <em><code>replacement</code></em> is a string, any backslash escapes in it are processed. That is, <code>\n</code> is converted to a single newline character, <code>\r</code> is converted to a carriage return, and so forth. Unknown escapes such as <code>\&amp;</code> are left alone. Backreferences, such as <code>\6</code>, are replaced with the substring matched by the corresponding group in the RE. This lets you incorporate portions of the original text in the resulting replacement string.</p></li>
+<li><p>The following example matches the word “section” followed by a string enclosed in <code>{</code>, <code>}</code>, and changes “section” to “subsection”:</p></li>
+</ul>
+<div class="cell" data-execution_count="42">
+<div class="sourceCode cell-code" id="cb82"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb82-1"><a href="#cb82-1"></a><span class="im">import</span> re</span>
+<span id="cb82-2"><a href="#cb82-2"></a> </span>
+<span id="cb82-3"><a href="#cb82-3"></a>p <span class="op">=</span> re.<span class="bu">compile</span>(<span class="st">'section{ ( [^}]* ) }'</span>, re.VERBOSE)</span>
+<span id="cb82-4"><a href="#cb82-4"></a>p.sub(<span class="vs">r'subsection{\1}'</span>,<span class="st">'section</span><span class="sc">{First}</span><span class="st"> section</span><span class="sc">{second}</span><span class="st">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="40">
+<pre><code>'subsection{First} subsection{second}'</code></pre>
+</div>
+</div>
+<ul>
+<li><p>There is also a syntax for referring to named groups as defined by the syntax <code>(?P&lt;name&gt;...)</code> . <code>\g&lt;name&gt;</code> will use the substring matched by the group named <code>name</code>, and <code>\g&lt;number&gt;</code> uses the corresponding group number. <code>\g&lt;2&gt;</code> is therefore equivalent to <code>\2</code>, but isn’t ambiguous in a replacement string such as <code>\g&lt;2&gt;0</code>. (<code>\20</code> would be interpreted as a reference to group 20, not a reference to group 2 followed by the literal character <code>'0'</code>.).</p></li>
+<li><p>The following substitutions are all equivalent, but use all three variations of the replacement string. Match pattern starting with “section{”, capture any content (except “}”) into a group named “name”, then end with a closing “}”. Then replace the matched patterns with “subsection”. The flag <code>re.VERBOSE</code> allows entering comments inside the pattern to make it more readable.</p></li>
+</ul>
+<div class="cell" data-execution_count="43">
+<div class="sourceCode cell-code" id="cb84"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb84-1"><a href="#cb84-1"></a><span class="im">import</span> re</span>
+<span id="cb84-2"><a href="#cb84-2"></a></span>
+<span id="cb84-3"><a href="#cb84-3"></a>pattern <span class="op">=</span> <span class="vs">r'''</span></span>
+<span id="cb84-4"><a href="#cb84-4"></a><span class="vs">  section{           # Match the literal string "section{"</span></span>
+<span id="cb84-5"><a href="#cb84-5"></a><span class="vs">  (?P&lt;name&gt;         # Start of the named capturing group "name"</span></span>
+<span id="cb84-6"><a href="#cb84-6"></a><span class="vs">  [^}]*             # Match any character that is not "}" zero or more times</span></span>
+<span id="cb84-7"><a href="#cb84-7"></a><span class="vs">  )                 # End the name capturing group "name"</span></span>
+<span id="cb84-8"><a href="#cb84-8"></a><span class="vs">  }                 # Match the literal "}" character</span></span>
+<span id="cb84-9"><a href="#cb84-9"></a><span class="vs">'''</span>                </span>
+<span id="cb84-10"><a href="#cb84-10"></a>    </span>
+<span id="cb84-11"><a href="#cb84-11"></a>p <span class="op">=</span> re.<span class="bu">compile</span>(pattern, re.VERBOSE)</span>
+<span id="cb84-12"><a href="#cb84-12"></a></span>
+<span id="cb84-13"><a href="#cb84-13"></a><span class="co"># by backreference</span></span>
+<span id="cb84-14"><a href="#cb84-14"></a><span class="bu">print</span>(<span class="st">'By backreference: </span><span class="ch">\n</span><span class="st">'</span>,p.sub(<span class="vs">r'subsection{\1}'</span>,<span class="st">'section</span><span class="sc">{First}</span><span class="st">'</span>))</span>
+<span id="cb84-15"><a href="#cb84-15"></a></span>
+<span id="cb84-16"><a href="#cb84-16"></a><span class="co"># by group number</span></span>
+<span id="cb84-17"><a href="#cb84-17"></a><span class="bu">print</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">By group number: </span><span class="ch">\n</span><span class="st">'</span>,p.sub(<span class="vs">r'subsection{\g&lt;1&gt;}'</span>,<span class="st">'section</span><span class="sc">{First}</span><span class="st">'</span>))</span>
+<span id="cb84-18"><a href="#cb84-18"></a></span>
+<span id="cb84-19"><a href="#cb84-19"></a><span class="co"># by group name</span></span>
+<span id="cb84-20"><a href="#cb84-20"></a><span class="bu">print</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">By group name: </span><span class="ch">\n</span><span class="st">'</span>,p.sub(<span class="vs">r'subsection{\g&lt;name&gt;}'</span>,<span class="st">'section</span><span class="sc">{First}</span><span class="st">'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>By backreference: 
+ subsection{First}
+
+By group number: 
+ subsection{First}
+
+By group name: 
+ subsection{First}</code></pre>
+</div>
+</div>
+<ul>
+<li><code>replacement</code> can also be a function. If <em><code>replacement</code></em> is a function, the function is called for every non-overlapping occurrence of <em><code>pattern</code></em>. On each call, the function is passed a <a href="https://docs.python.org/3/library/re.html#match-objects">match object</a> argument for the match and can use this information to compute the desired replacement string and return it. In the following example, the replacement function translates decimals into hexadecimal:</li>
+</ul>
+<div class="cell" data-execution_count="44">
+<div class="sourceCode cell-code" id="cb86"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb86-1"><a href="#cb86-1"></a><span class="im">import</span> re</span>
+<span id="cb86-2"><a href="#cb86-2"></a></span>
+<span id="cb86-3"><a href="#cb86-3"></a><span class="kw">def</span> hexrepl(match):</span>
+<span id="cb86-4"><a href="#cb86-4"></a>    <span class="co">"Return the hex string for a decimal number"</span></span>
+<span id="cb86-5"><a href="#cb86-5"></a>    value <span class="op">=</span> <span class="bu">int</span>(match.group())</span>
+<span id="cb86-6"><a href="#cb86-6"></a>    <span class="cf">return</span> <span class="bu">hex</span>(value)</span>
+<span id="cb86-7"><a href="#cb86-7"></a></span>
+<span id="cb86-8"><a href="#cb86-8"></a>p <span class="op">=</span> re.<span class="bu">compile</span>(<span class="vs">r'\d+'</span>)</span>
+<span id="cb86-9"><a href="#cb86-9"></a>p.sub(hexrepl, <span class="st">'Call 65490 for printing, 49152 for user code.'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="42">
+<pre><code>'Call 0xffd2 for printing, 0xc000 for user code.'</code></pre>
+</div>
+</div>
+<ul>
+<li>When using the module-level <a href="https://docs.python.org/3/library/re.html#re.sub" title="re.sub"><code>re.sub()</code></a> function, the pattern is passed as the first argument. The pattern may be provided as an object or as a string; if you need to specify regular expression flags, you must either use a pattern object as the first parameter, or use embedded modifiers in the pattern string, e.g.&nbsp;<code>sub("(?i)b+", "x", "bbbb BBBB")</code> returns <code>'x x'</code>.</li>
+</ul>
+</section>
+<section id="some-common-problems" class="slide level2 scrollable">
+<h2>Some common problems</h2>
+<ul>
+<li>Regular expressions are a powerful tool for some applications, but in some ways their behaviour is not intuitive and at times they don’t behave the way you may expect them to. This section will point out some of the most common pitfalls.</li>
+</ul>
+<h3 id="using-string-methods">Using string methods</h3>
+<ul>
+<li><p>Sometimes using the <code>re</code> module is excessive and it is better to use the standard string operations.</p></li>
+<li><p>For example, to match a fixed string or a single character class without any special features of <code>re</code> like <code>.IGNORECASE</code>, etc., then the full power of regular expressions may not be required.</p></li>
+<li><p>Strings have several methods for performing operations with fixed strings and they’re usually much faster, because the implementation is a single small C loop that’s been optimized for the purpose, instead of the large, more generalized regular expression engine.</p></li>
+<li><p>One example might be replacing a single fixed string with another one; for example, you might replace “word” with “deed”. <a href="https://docs.python.org/3/library/re.html#re.sub" title="re.sub"><code>re.sub()</code></a> seems like the function to use for this, but consider the <a href="https://docs.python.org/3/library/stdtypes.html#str.replace" title="str.replace"><code>replace()</code></a> method instead.</p></li>
+<li><p>However, note that <code>replace()</code> will also replace “word” inside words, turning “swordfish” into “sdeedfish”. While the naive use of RE would have done that too, avoiding performing the substitution on parts of words would have been achieved by using RE <code>\bword\b</code> This takes the job beyond <code>replace()</code>’s abilities and can be done better by RE.</p></li>
+<li><p>Another common task is deleting every occurrence of a single character from a string or replacing it with another single character. You might do this with something like <code>re.sub('\n', ' ', S)</code>, but <a href="https://docs.python.org/3/library/stdtypes.html#str.translate" title="str.translate"><code>translate()</code></a> is capable of doing both tasks and will be faster than any regular expression operation can be.</p></li>
+<li><p>In short, before turning to the <a href="https://docs.python.org/3/library/re.html#module-re" title="re: Regular expression operations."><code>re</code></a> module, consider whether your problem can be solved with a faster and simpler string method.</p></li>
+</ul>
+<h3 id="using-match-versus-search">Using <code>match()</code> versus <code>search()</code></h3>
+<ul>
+<li><p>The <a href="https://docs.python.org/3/library/re.html#re.match" title="re.match"><code>match()</code></a> function only checks if the RE matches at the beginning of the string while <a href="https://docs.python.org/3/library/re.html#re.search" title="re.search"><code>search()</code></a> will scan forward through the string for a match. It’s important to keep this distinction in mind. Remember, <code>match()</code> will only report a successful match which will start at 0; if the match does not start at zero, <code>match()</code> will <em>not</em> report it.</p></li>
+<li><p>On the other hand, <a href="https://docs.python.org/3/library/re.html#re.search" title="re.search"><code>search()</code></a> will scan forward through the string, <strong>reporting the first match it finds</strong>.</p></li>
+<li><p>It is recommended to avoid using <code>re.match()</code> with <code>.*</code> in front of RE to search inside the string.</p></li>
+<li><p>The regular expression compiler does some analyses of REs in order to speed up the process of looking for a match. One such analysis figures out what the first character of a match must be; for example, a pattern starting with “Crow” must match starting with a “C”. The analysis lets the engine quickly scan through the string looking for the starting character, only trying the full match if a “C” is found.</p></li>
+<li><p>Starting the pattern with <code>.*</code> defeats this optimization, requiring scanning to the end of the string and then backtracking to find a match for the rest of the RE. Use <a href="https://docs.python.org/3/library/re.html#re.search" title="re.search"><code>re.search()</code></a> instead.</p></li>
+</ul>
+<h3 id="greedy-versus-non-greedy">Greedy versus non-greedy</h3>
+<ul>
+<li>When repeating a regular expression, as in <code>a*</code>, the resulting action is to consume as much of the pattern as possible. This fact often bites you when you are trying to match a pair of balanced delimiters, such as the angle brackets surrounding an HTML tag. The naive pattern for matching a single HTML tag doesn’t work because of the greedy nature of <code>.*</code>.</li>
+</ul>
+<div class="cell" data-execution_count="45">
+<div class="sourceCode cell-code" id="cb88"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb88-1"><a href="#cb88-1"></a><span class="im">import</span> re</span>
+<span id="cb88-2"><a href="#cb88-2"></a></span>
+<span id="cb88-3"><a href="#cb88-3"></a>s <span class="op">=</span> <span class="st">'&lt;html&gt;&lt;head&gt;&lt;title&gt;Title&lt;/title&gt;'</span></span>
+<span id="cb88-4"><a href="#cb88-4"></a></span>
+<span id="cb88-5"><a href="#cb88-5"></a><span class="bu">print</span>(<span class="st">'Length of the striung: '</span>,<span class="bu">len</span>(s))</span>
+<span id="cb88-6"><a href="#cb88-6"></a></span>
+<span id="cb88-7"><a href="#cb88-7"></a><span class="bu">print</span>(<span class="st">'The span is equal the length: '</span>,re.match(<span class="st">'&lt;.*&gt;'</span>, s).span())</span>
+<span id="cb88-8"><a href="#cb88-8"></a></span>
+<span id="cb88-9"><a href="#cb88-9"></a><span class="bu">print</span>(<span class="st">'Single group equal to the entire string is matched: '</span>,re.match(<span class="st">'&lt;.*&gt;'</span>, s).group())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Length of the striung:  32
+The span is equal the length:  (0, 32)
+Single group equal to the entire string is matched:  &lt;html&gt;&lt;head&gt;&lt;title&gt;Title&lt;/title&gt;</code></pre>
+</div>
+</div>
+<ul>
+<li><p>The RE matches the “&lt;” in “&lt; html &gt;”, and the <code>.*</code> consumes the rest of the string. There is still more left in the RE, though, and the “&gt;” cannot match at the end of the string, so the <strong>regular expression engine has to backtrack character by character until it finds a match</strong> for the “&gt;”. The final match extends from the “&lt;” in “&lt; html &gt;” to the “&gt;” in “&lt; /title &gt;”, which is not what you want.</p></li>
+<li><p>In this case, the solution is to use the non-greedy quantifiers <code>*?</code>, <code>+?</code>, <code>??</code>, or <code>{m,n}?</code>, which match <strong>as <em>little</em> text as possible</strong>. In the example below, the “&gt;” is tried immediately after the first “&lt;” matches, and when it fails, the engine advances a character at a time, retrying the “&gt;” at every step. This produces the right result:</p></li>
+</ul>
+<div class="cell" data-execution_count="46">
+<div class="sourceCode cell-code" id="cb90"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb90-1"><a href="#cb90-1"></a><span class="im">import</span> re</span>
+<span id="cb90-2"><a href="#cb90-2"></a></span>
+<span id="cb90-3"><a href="#cb90-3"></a><span class="bu">print</span>(re.match(<span class="st">'&lt;.*?&gt;'</span>, s).group())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;html&gt;</code></pre>
+</div>
+</div>
+<ul>
+<li>Note that parsing HTML or XML with regular expressions <strong>is painful</strong>. Quick-and-dirty patterns will handle only common cases, but HTML and XML have many special cases that will break the obvious regular expression; a regular expression that handles all of the possible cases, will inevitably be <em>very</em> complicated. <strong>Use an HTML or XML parser module</strong> for such tasks.</li>
+</ul>
+<h3 id="using-re.verbose">Using <code>re.VERBOSE</code></h3>
+<ul>
+<li><p>Regular expressions have a very compact notation, but they are not easy to read.</p></li>
+<li><p>As the example of the previous section showed, specifying the <a href="https://docs.python.org/3/library/re.html#re.VERBOSE" title="re.VERBOSE"><code>re.VERBOSE</code></a> flag when compiling the regular expression can be helpful, because it allows you to format the regular expression more clearly.</p></li>
+<li><p>The <code>re.VERBOSE</code> flag has several effects. Whitespace in the regular expression that <em>is not</em> inside a character class is ignored. This means that an expression such as <code>dog | cat</code> is equivalent to the less readable <code>dog|cat</code>, but <code>[a b]</code> will still match the characters “a”, “b”, <strong>or a space</strong>.</p></li>
+<li><p>In addition, you can also put comments inside a RE; comments extend from a “#” character to the next newline. When used with triple-quoted strings, this enables REs to be formatted more neatly:</p></li>
+</ul>
+<div class="cell" data-execution_count="47">
+<div class="sourceCode cell-code" id="cb92"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb92-1"><a href="#cb92-1"></a>pat <span class="op">=</span> re.<span class="bu">compile</span>(<span class="vs">r"""</span></span>
+<span id="cb92-2"><a href="#cb92-2"></a><span class="vs"> \s*                 # Skip leading whitespace</span></span>
+<span id="cb92-3"><a href="#cb92-3"></a><span class="vs"> (?P&lt;header&gt;[^:]+)   # Header name</span></span>
+<span id="cb92-4"><a href="#cb92-4"></a><span class="vs"> \s* :               # Whitespace, and a colon</span></span>
+<span id="cb92-5"><a href="#cb92-5"></a><span class="vs"> (?P&lt;value&gt;.*?)      # The header's value -- *? used to</span></span>
+<span id="cb92-6"><a href="#cb92-6"></a><span class="vs">                     # lose the following trailing whitespace</span></span>
+<span id="cb92-7"><a href="#cb92-7"></a><span class="vs"> \s*$                # Trailing whitespace to end-of-line</span></span>
+<span id="cb92-8"><a href="#cb92-8"></a><span class="vs">"""</span>, re.VERBOSE)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>This is much easier to break down than</li>
+</ul>
+<div class="cell" data-execution_count="48">
+<div class="sourceCode cell-code" id="cb93"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb93-1"><a href="#cb93-1"></a>pat <span class="op">=</span> re.<span class="bu">compile</span>(<span class="vs">r"\s*(?P&lt;header&gt;[^:]+)\s*:(?P&lt;value&gt;.*?)\s*$"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="footer footer-default">
+
+</div>
+</section>
+    </div>
+  </div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="iLykei_RegularExpressions_files/libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="iLykei_RegularExpressions_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="iLykei_RegularExpressions_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="iLykei_RegularExpressions_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="iLykei_RegularExpressions_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="iLykei_RegularExpressions_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="iLykei_RegularExpressions_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="iLykei_RegularExpressions_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="iLykei_RegularExpressions_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="iLykei_RegularExpressions_files/libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'smaller': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: false,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: '100%',
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
+        }
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
+      }
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const isCodeAnnotation = (el) => {
+        for (const clz of el.classList) {
+          if (clz.startsWith('code-annotation-')) {                     
+            return true;
+          }
+        }
+        return false;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button', {
+        text: function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+      });
+      clipboard.on('success', function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
+        setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      });
+      function tippyHover(el, contentFn) {
+        const config = {
+          allowHTML: true,
+          content: contentFn,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start'
+        };
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          return note.innerHTML;
+        });
+      }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
+          });
+        }
+      }
+    });
+    </script>
+    
+
+</body></html>
