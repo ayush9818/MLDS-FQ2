@@ -1,0 +1,73 @@
+#
+# Simple app to access AWS S3 storage bucket, using AWS's 
+# boto library, and output all the photos in the "test"
+# sub-folder within the bucket
+#
+# https://boto3.amazonaws.com/v1/documentation/api/latest/index.html
+# https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html
+#
+import logging
+import os
+import sys
+
+import boto3  # access to Amazon Web Services (AWS)
+from botocore import UNSIGNED
+from botocore.client import Config
+
+import matplotlib.pyplot as plt
+import matplotlib.image as img
+
+#################################################################
+##
+## main
+##
+print('starting')
+print()
+#
+# eliminate traceback so we just get error message:
+#
+sys.tracebacklimit = 0
+
+#
+# gain access to CS 310's public photoapp bucket:
+#
+try:
+  s3 = boto3.resource(
+    's3',
+    region_name='us-east-2',
+    # enables access to public objects:
+    config=Config(signature_version=UNSIGNED))
+
+  bucket = s3.Bucket('nu-cs-msa-s3-photoapp')
+
+  #
+  # loops through the test folder and displays each image
+  #
+  # NOTES:
+  #   1. make sure "output" tab is open to see image
+  #   2. click "X" in upper-right of image to advance
+  #
+  folder = "test/"
+  
+  #
+  # TODO
+  #
+  for asset in bucket.objects.filter(Prefix=folder):
+    if not asset.key.endswith('jpg'): # skip folders, non-images:
+      pass
+    else:
+      print('downloading', asset.key)
+      filename = 'temp.jpg'
+      bucket.download_file(asset.key, filename)
+      image = img.imread(filename)
+      plt.imshow(image)
+      plt.show()
+      os.remove(filename)
+
+except Exception as e:
+  logging.error(e)
+  exit(-1)
+
+print()
+print('done')
+exit(0)

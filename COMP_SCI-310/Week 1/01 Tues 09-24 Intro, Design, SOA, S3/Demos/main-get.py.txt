@@ -1,0 +1,73 @@
+#
+# Simple app to access AWS S3 storage bucket via 
+# URL, i.e. using S3's underlying web service API
+#
+import sys
+import requests
+
+import matplotlib.pyplot as plt
+import matplotlib.image as img
+
+##############################################
+##
+## main
+##
+print('starting')
+print()
+#
+# eliminate traceback so we just get error message:
+#
+sys.tracebacklimit = 0
+
+try:
+  baseurl = "https://nu-cs-msa-s3-photoapp.s3.us-east-2.amazonaws.com/"
+
+  #
+  # available images: degu.jpg, earth.jpg, rollcloud.jpg, social-media.jpg
+  #
+  prompt = "Enter image name (or press ENTER)> "
+  imagename = input(prompt)
+
+  #
+  # if no input, default to degu image:
+  #
+  if imagename == "":
+    imagename = "degu.jpg"
+
+  url = baseurl + imagename
+
+  print()
+  print("url:", url)
+  print()
+
+  #
+  # make get request to web service:
+  #
+  res = requests.get(url)
+
+  print("status code:", res.status_code)
+
+  if res.status_code == 200: # success!
+    #
+    # we have an image in the body of the response:
+    #
+    print()
+    print('success, image received!')
+    print('time:', res.elapsed)
+    print('size:', len(res.content), 'bytes')
+    print()
+      
+    outfile = open(imagename, "wb")
+    outfile.write(res.content)
+    outfile.close()
+    
+    image = img.imread(imagename)
+    plt.imshow(image)
+    
+except Exception as e:
+  print('ERROR', str(e))
+  exit(-1)
+
+print()
+print('done')
+exit(0)
