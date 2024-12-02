@@ -1,0 +1,21 @@
+Please check the detailed instructions at the following link:
+
+https://docs.google.com/document/d/1eF_C_MVmnHxtBJmPo7j_XP7Dd7Ei04CMBh4gRBhn0kM/edit?usp=sharing
+
+Public Link: https://docs.google.com/document/d/1TjVg2iyCQbrWT1A53WOHJbR5kCwrzk-vWKsfy-f2ejc/edit?usp=sharing
+
+If you are not familiar with PyTorch, use the Kaggle tutorial at the following link:
+
+https://www.kaggle.com/code/kanncaa1/pytorch-tutorial-for-deep-learning-lovers/notebook
+
+You can use any possible model (e.g., ones in https://www.kaggle.com/learn/intro-to-machine-learning, https://www.kaggle.com/learn/time-series, https://www.kaggle.com/learn/intermediate-machine-learning, and https://www.kaggle.com/code/kanncaa1/pytorch-tutorial-for-deep-learning-lovers).
+
+For more specific introduction to models, please check the following lectures out, especially those involving backpropagation, RNN, CNN, and Transformers as well as the corresponding notebooks, which will soon be covered in a few lectures (partially).
+
+https://dlsyscourse.orgLinks to an external site.
+
+https://efficientml.aiLinks to an external site.
+
+We acknowledge Tianqi Chen (CMU) and Song Han (MIT) for creating such wonderful courses and sharing the course material.
+
+

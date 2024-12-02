@@ -1,0 +1,16 @@
+[50 points] Are the recurrent architecture (RNN with only one layer) and the attention architecture (transformer with only one layer) invariant/equivariant to permutations of inputs, i.e., giving the same set of outputs (reordered) upon reordering the input sequence? (Give a reason.)
+
+ 
+
+[50 points] Data are updated to Canvas/Files/Midterm/Data. Build a regression model (with the transformer model as specified below) from training_data+.csv (containing 990,000 steps) so that it completes testing_data_initial+.csv (containing 100 steps of a times series as the initial steps). Predict the subsequent steps and save them into testing_data_predict+.csv (containing 9,900 steps in the same format).
+
+Use the following function for saving, where testing_data_predict is a numpy array.
+
+np.savetxt("testing_data_predict+.csv", testing_data_predict, delimiter=",")
+
+Upload csv and ipynb.
+
+Write a multihead attention in pytorch (without the causal mask). Set the sequence length as 100. Apply it (with a linear layer that maps the attention output to a three-dimensional vector) to fit the midterm dataset. Evaluate Corr and MSE on testing_data_rest+.csv in Cavans/Files/Midterm/Data/Reference. Visualize the attention weight. How many heads works best?
+
+Uploaded files
+

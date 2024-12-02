@@ -1,0 +1,15 @@
+1. In the following notebooks, identify the function class (F of f_theta), the parameter space (theta in f_theta), the loss function (l), and the empirical risk (L) for each learning problem that appeared. What is the probability distribution (p_theta) corresponding to the loss function and the empirical risk if we take the (log-)likelihood view?
+
+https://www.kaggle.com/code/kanncaa1/pytorch-tutorial-for-deep-learning-lovers/notebookLinks to an external site.
+
+Links to an external site.https://github.com/rasbt/LLMs-from-scratch/blob/main/appendix-A/01_main-chapter-code/code-part1.ipynbLinks to an external site.
+
+Links to an external site.https://github.com/rasbt/LLMs-from-scratch/blob/main/appendix-A/01_main-chapter-code/code-part2.ipynbLinks to an external site.
+
+For submissions, add annotations to the original notebook and convert the ipynb file to a pdf file.
+
+2. In the following repository, identify where the computation graph is specified and where the gradient tensor is computed.
+
+https://github.com/karpathy/nanoGPTLinks to an external site.
+
+For submissions, add annotations to the original file and convert the python file to a pdf file.
