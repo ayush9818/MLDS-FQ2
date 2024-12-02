@@ -1,0 +1,20 @@
+Solution / Code for Generation / Code for Evaluation for HW5 and Midterm
+For midterm, the following script generates the ground truth. (Note that it did not set the random seed -- If you choose to regenerate the dataset, make sure to generate the training and testing datasets at the same time and retrain your model.) You can evaluate the prediction accuracy using MSE or Corr on the testing dataset (posted on Canvas files), which correspond to the training dataset we provided for midterm.
+
+https://colab.research.google.com/drive/1ncgTF9CKKxyAeNwoIWP7d_Wl4YoikfFR?usp=sharingLinks to an external site.
+
+Reference solutions:
+
+https://colab.research.google.com/drive/1JSJppt35qg8M2TYasoGYPeEiImoqwaMT?usp=sharingLinks to an external site. (Transformer based solution 1)
+
+https://drive.google.com/file/d/1jgYc4-ILObLV5D7hqjGwqHXvcM7FUjcP/view?usp=sharingLinks to an external site. (Transformer based solution 2)
+
+https://drive.google.com/file/d/1Sqr8W6KvACNOsH6XghFA5ILgJGSjZMdR/view?usp=sharingLinks to an external site. (MLP based solution, which reaches 0.99 corr)
+
+For HW5, the ground truth of the testing dataset is posted at the link below. You can evaluate the prediction accuracy using Corr. A reasonable benchmark is to reach Corr > 0.1 between prediction and the ground truth:
+
+https://drive.google.com/file/d/1y7wzVJa-c2bTf-iklVDVrmPFhzPiPgXD/view?usp=sharingLinks to an external site.
+
+Reference solution:
+
+https://colab.research.google.com/drive/1rC2sNzUjA0WqMNWevuZredF3hD80I7Su?usp=sharing
