@@ -1,1 +1,1 @@
-# MLDS-FQ2
+# Northwestern Course Content for Fall Quarter 2
